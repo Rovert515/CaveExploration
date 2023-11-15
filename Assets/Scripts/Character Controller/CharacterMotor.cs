@@ -1,5 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
+
+// TODO make sprinting actually do something, set up a step coroutine that can be activated when you start moving and deactivate when you stop (just have the
+  // interval be based on whether you're sprinting or not when you step, we don't need to change mid stride), test stepping and sprinting, make it so you de-celerate
+  // when you stop sprinting but keep moving, add listeners so stepping has head bob and sound effect
 
 // modified version of Benno's first person controller from the first person labs
 
@@ -34,6 +39,9 @@ public class CharacterMotor : MonoBehaviour
 	public bool grounded = true;
 
 	[HideInInspector]
+	public bool sprinting = false;
+
+	[HideInInspector]
 	public Vector3 groundNormal = Vector3.zero;
 
 	[HideInInspector]
@@ -43,13 +51,30 @@ public class CharacterMotor : MonoBehaviour
 
 	private CharacterController controller;
 
-	[System.Serializable]
+	[SerializeField]
+	private float strideLength = 1.0f; // time between footsteps while walking
+	[SerializeField]
+	public float sprintLength = 0.25f; // time between footsteps while running
+
+	[HideInInspector]
+    public UnityEvent stepEvent; // a Unity event that is invoked when the player takes a step (when they move continuously for strideLength, or sprintLength
+	   // if they're running)
+
+	private void Test()
+	{
+		Debug.Log("Step");
+	}
+
+        [System.Serializable]
 	public class CharacterMotorMovement
 	{
 		// The maximum horizontal speed when moving
 		public float maxForwardSpeed = 10.0f;
 		public float maxSidewaysSpeed = 10.0f;
 		public float maxBackwardsSpeed = 10.0f;
+
+		// The amount to multiply horizontal speed and ground acceleration by when running
+		public float sprintMultiplier = 2.0f;
 	
 		// Curve for multiplying speed based on slope (negative = downwards)
 		public AnimationCurve slopeSpeedMultiplier = new AnimationCurve (new Keyframe (-90, 1), new Keyframe (0, 1), new Keyframe (90, 0));
@@ -196,12 +221,22 @@ public class CharacterMotor : MonoBehaviour
 	{
 		controller = GetComponent<CharacterController> ();
 		tr = transform;
+		stepEvent.AddListener(Test);
 	}
 
 	private void UpdateFunction ()
 	{
 		// We copy the actual velocity into a temporary variable that we can manipulate.
 		Vector3 velocity = movement.velocity;
+
+		// We update whether the player is running or not
+		if (Input.GetKey(KeyCode.LeftShift) | Input.GetKey(KeyCode.RightShift))
+		{
+			sprinting = true;
+		} else
+		{
+			sprinting = false;
+		}
 	
 		// Update velocity based on input
 		velocity = ApplyInputVelocityChange (velocity);
