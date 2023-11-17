@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     private static GameObject quitCancel;
     private static GameObject restart;
 
-    private static GameObject[] hearts = new GameObject[PlayerHealth.CheckMaxHealth()]; // fits hearts equal to the player's max health
+    //private static GameObject[] hearts = new GameObject[PlayerHealth.CheckMaxHealth()]; // fits hearts equal to the player's max health
 
     [SerializeField] private GameObject localPopup;
     [SerializeField] private GameObject localPauseText;
@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject localQuitCancel;
     [SerializeField] private GameObject localRestart;
 
-    [SerializeField] private GameObject[] localHearts = new GameObject[PlayerHealth.CheckMaxHealth()];
+    //[SerializeField] private GameObject[] localHearts = new GameObject[PlayerHealth.CheckMaxHealth()];
 
     void Awake() // when entering a scene with a new UI manager, connect all local dynamic UI elements to the held ones so they can be used by Show and Hide text functions
         // does the same for buttons so they can be enabled and disabled, but accounts for the fact that not every screen has every button
@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
         quitCancel = localQuitCancel;
         restart = localRestart;
 
-        hearts = localHearts;
+        //hearts = localHearts;
 
         if (localPauseButton  != null)
         {
@@ -171,8 +171,8 @@ public class UIManager : MonoBehaviour
         pauseComponent.interactable = true;
     }
 
-    public static void LoseHeart(int heartID)
+    /*public static void LoseHeart(int heartID)
     {
         hearts[heartID].GetComponent<HeartAnim>().LoseHeart();
-    }
+    }*/
 }
