@@ -6,17 +6,17 @@ public class HeadbobController : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private bool _enable = true;
-    [SerializeField, Range(0, 0.1f)] private float _Amplitude = 0.015f; [SerializeField, Range(0, 30)] private float _frequency = 10.0f;
-    [SerializeField] private Transform _camera = null; [SerializeField] private Transform _cameraHolder = null;
+    [SerializeField, Range(0, 0.1f)] private float Amplitude = 0.015f; [SerializeField, Range(0, 30)] private float frequency = 10.0f;
+    [SerializeField] private Transform camera = null; [SerializeField] private Transform cameraHolder = null;
 
-    private float _toggleSpeed = 3.0f;
-    private Vector3 _startPos;
-    private CharacterController _controller;
+    private float toggleSpeed = 3.0f;
+    private Vector3 startPos;
+    private CharacterController controller;
 
     private void Awake()
     {
-        _controller = GetComponent<CharacterController>();
-        _startPos = _camera.localPosition;
+        controller = GetComponent<CharacterController>();
+        startPos = camera.localPosition;
     }
 
     void Update()
@@ -24,37 +24,37 @@ public class HeadbobController : MonoBehaviour
         if (!_enable) return;
         CheckMotion();
         ResetPosition();
-        _camera.LookAt(FocusTarget());
+        camera.LookAt(FocusTarget());
     }
     private Vector3 FootStepMotion()
     {
         Vector3 pos = Vector3.zero;
-        pos.y += Mathf.Sin(Time.time * _frequency) * _Amplitude;
-        pos.x += Mathf.Cos(Time.time * _frequency / 2) * _Amplitude * 2;
+        pos.y += Mathf.Sin(Time.time * frequency) * Amplitude;
+        pos.x += Mathf.Cos(Time.time * frequency / 2) * Amplitude * 2;
         return pos;
     }
     private void CheckMotion()
     {
-        float speed = new Vector3(_controller.velocity.x, 0, _controller.velocity.z).magnitude;
-        if (speed < _toggleSpeed) return;
-        if (!_controller.isGrounded) return;
+        float speed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
+        if (speed < toggleSpeed) return;
+        if (!controller.isGrounded) return;
 
         PlayMotion(FootStepMotion());
     }
     private void PlayMotion(Vector3 motion)
     {
-        _camera.localPosition += motion;
+        camera.localPosition += motion;
     }
 
     private Vector3 FocusTarget()
     {
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y + _cameraHolder.localPosition.y, transform.position.z);
-        pos += _cameraHolder.forward * 15.0f;
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y + cameraHolder.localPosition.y, transform.position.z);
+        pos += cameraHolder.forward * 15.0f;
         return pos;
     }
     private void ResetPosition()
     {
-        if (_camera.localPosition == _startPos) return;
-        _camera.localPosition = Vector3.Lerp(_camera.localPosition, _startPos, 1 * Time.deltaTime);
+        if (camera.localPosition == startPos) return;
+        camera.localPosition = Vector3.Lerp(camera.localPosition, startPos, 1 * Time.deltaTime);
     }
 }
