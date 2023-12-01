@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 11400000}
   - component: {fileID: 847908768624985641}
   m_Layer: 0
-  m_Name: First Person Controller
+  m_Name: FPC
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
