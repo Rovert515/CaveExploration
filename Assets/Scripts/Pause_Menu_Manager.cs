@@ -45,10 +45,7 @@ public class Pause_Menu_Manager : MonoBehaviour
             if (menuOpen == false)
             {
                 SwapPaused();
-            }
 
-            if (menuOpen == false)
-            {
                 if (isPaused == false)
                 {
                     ResumeGame();
