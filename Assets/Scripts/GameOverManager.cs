@@ -20,7 +20,7 @@ public class GameOverManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // You can add your game over conditions and logic here
+        // add game over logic here
 
         // For testing
         if (Input.GetKeyDown(KeyCode.M))
@@ -30,13 +30,12 @@ public class GameOverManager : MonoBehaviour
         
         }
 
-        // For demonstration purposes, let's say the game is over when the player presses the "R" key
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             RestartScene();
         }
 
-        // For demonstration purposes, let's say the game is over when the player presses the "Q" key
         if (Input.GetKeyDown(KeyCode.Q))
         {
             QuitGame();
