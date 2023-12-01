@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class TESTDialogueTrigger : MonoBehaviour
 {
-    DialogueManager.DialogueState tree =
-        new DialogueManager.DialogueState("N/A", "Hello, hello, testing testing. Do you read me?",
-            new DialogueManager.DialogueState("Oooh, a button", "Congratulations, you clicked a button!"),
-            new DialogueManager.DialogueState("I'm in a test aren't I", "Yes you are and there's no escape",
-                new DialogueManager.DialogueState("NOOOOOOOOO", "Suffer and perish"),
-                new DialogueManager.DialogueState("Does that mean god is real", "Sure, little .txt, sure")
-            ),
-            new DialogueManager.DialogueState("So, come here often?", "Yes, you wouldn't believe how long this code took to write")
+
+    static DialogueManager.DialogueState begin2 =
+        new DialogueManager.DialogueState("Distress signal?", "All our equipment is outfitted with one if it experiences enough damage. " +
+            "Are you one of the hikers that left earlier? You missed your return time! Where are you?");
+
+    static DialogueManager.DialogueState begin =
+        new DialogueManager.DialogueState("N/A", "Hello? Hello? Is anyone there? If you can hear me, please respond!",
+            new DialogueManager.DialogueState("Hello?", "Oh thank god, I saw the distress single and " +
+                "I thought someone DIED!",
+                begin2),
+            new DialogueManager.DialogueState("I'm here.", "Oh thank god, I saw the distress single and " +
+                "I thought someone DIED!",
+                begin2),
+            new DialogueManager.DialogueState("Who is this?", "Oh thank god, I saw the distress single and " +
+                "I thought someone DIED!",
+                begin2)
         );
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") // if the object that has triggered it is the player
         {
-            DialogueManager.currentDialogueManager.SetDialogueState(tree);
+            DialogueManager.currentDialogueManager.SetDialogueState(begin);
         }
     }
 }
