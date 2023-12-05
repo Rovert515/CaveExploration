@@ -7,6 +7,8 @@ TagManager:
   - PauseMenu
   - HelpMenu
   - SettingsMenu
+  - BeginningDialogue
+  - Hallway1Dialogue
   layers:
   - Default
   - TransparentFX

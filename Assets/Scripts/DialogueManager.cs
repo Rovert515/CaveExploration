@@ -43,6 +43,10 @@ public class DialogueManager : MonoBehaviour
             return null;
         }
 
+        public DialogueState(string optionT) // a constructor for a DialogueState that ends the dialogue (with player input)
+        {
+            optionTxt = optionT;
+        }
         public DialogueState(string optionT, string messageT) // a constructor for a DialogueState with no options (will default to Continue)
         {
             optionTxt = optionT;
@@ -115,6 +119,13 @@ public class DialogueManager : MonoBehaviour
 
     public void SetDialogueState(DialogueState state) // set the current Dialogue State to the one inputted and update relevant UI elements
     {
+
+        if (state.GetMessageTxt() == null) // if the message text is null (i.e. only player response) ends the dialogue
+        {
+            WipeDialogueState();
+            return;
+        }
+
         if (currentDialogueState == null) // if the current DialogueState is null, we need to reactivate walkietalkie and enable the messagetxt
         {
             walkieImageOn.enabled = true;
@@ -185,6 +196,9 @@ public class DialogueManager : MonoBehaviour
         option1Display.text = null;
         option2Display.enabled = false;
         option2Display.text = null;
+
+        walkieImageOn.enabled = false;
+        walkieImageOff.enabled = true;
 
         currentAudioSource.Stop();
     }
