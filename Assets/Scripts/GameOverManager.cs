@@ -7,9 +7,6 @@ public class GameOverManager : MonoBehaviour
 {
     private GameObject gameOverMenu;
 
-    //FIXME disable MouseLook when gameover happens
-    public MouseLook MouseLook;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,53 +14,29 @@ public class GameOverManager : MonoBehaviour
         gameOverMenu.SetActive(false);
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
-        // add game over logic here
 
-        // For testing
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            gameOverMenu.SetActive(true);
-            PauseGame();
-        
-        }
-
-        
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartScene();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            QuitGame();
-        }
     }
 
-    void PauseGame()
+    public void OpenGameOverMenu()
     {
-        Time.timeScale = 0f;
-        // isPaused = true;
-
-        if (MouseLook != null)
-        {
-            MouseLook.enabled = false;
-        }
-        
-
+        gameOverMenu.SetActive(true);
     }
 
-    // Restarts the current scene
-    void RestartScene()
+
+        // Restarts the current scene
+        public void RestartScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
 
     // Quits the game
-    void QuitGame()
+    public void QuitGame()
     {
         UnityEditor.EditorApplication.isPlaying = false;
 
