@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 550853962}
   m_Layer: 0
   m_Name: Hallway 1 Dialogue Trigger
-  m_TagString: Hallway1Dialogue
+  m_TagString: Hallway2Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - SettingsMenu
   - BeginningDialogue
   - Hallway1Dialogue
+  - Hallway2Dialogue
   layers:
   - Default
   - TransparentFX
