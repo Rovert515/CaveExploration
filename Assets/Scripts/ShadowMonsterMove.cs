@@ -9,17 +9,18 @@ public class ShadowMonsterMove : MonoBehaviour
     private Transform playerPos; // the position of the player, given to it by the collider that triggers it
 
     private SkinnedMeshRenderer[] meshes; // the meshes that make up this ShadowMonster
-    private Material dissolveMaterial;
-
-    private GameObject deathEffect;
+    // private Material dissolveMaterial;
 
     private GameOverManager gameOverManager;
+
+    private GameObject flakes;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         meshes = GetComponentsInChildren<SkinnedMeshRenderer>();
-        dissolveMaterial = GetComponentInChildren<SkinnedMeshRenderer>().material;
+        flakes = GetComponentInChildren<ParticleSystem>(true).gameObject;
+        // dissolveMaterial = GetComponentInChildren<SkinnedMeshRenderer>().material;
     }
 
     public void ReceivePlayerPos(Transform player) // just a write only accessor to playerPos for ShadowSpawn to give the player position to
@@ -57,35 +58,37 @@ public class ShadowMonsterMove : MonoBehaviour
 
     public void Illuminated() // this monster is illuminated, and so it dies
     {
-        foreach (SkinnedMeshRenderer mesh in meshes)
-        {
-            float delay = 1.0f; // Adjust the delay time as needed
+   
+            // Enable particle system "Flakes" if it exists
+            if (flakes != null)
+            {
+                flakes.gameObject.SetActive(true);
+            }
+            float delay = 1.5f; // Adjust the delay time as needed
             Destroy(gameObject, delay);
 
-            if (deathEffect != null)
-            {
-                deathEffect.SetActive(true);
-            }
-        }
+          
+    
 
-        StartCoroutine(DissolveAnimation());
+        // We can try to mess with the dissolve effect but not a priority
+        // StartCoroutine(DissolveAnimation()); 
     }
 
 
-    IEnumerator DissolveAnimation()
-    {
-        float duration = 1.0f; // Adjust the duration of the dissolve effect
-        float startTime = Time.time;
+    //IEnumerator DissolveAnimation()
+    //{
+    //    float duration = 1.0f; // Adjust the duration of the dissolve effect
+    //    float startTime = Time.time;
 
-        while (Time.time - startTime < duration)
-        {
-            float dissolveAmount = Mathf.Lerp(0f, 1f, (Time.time - startTime) / duration);
-            dissolveMaterial.SetFloat("DissolveAmount", dissolveAmount);
+    //    while (Time.time - startTime < duration)
+    //    {
+    //        float dissolveAmount = Mathf.Lerp(0f, 1f, (Time.time - startTime) / duration);
+    //        dissolveMaterial.SetFloat("DissolveAmount", dissolveAmount);
 
-            yield return null;
-        }
+    //        yield return null;
+    //    }
 
-        // Ensure the dissolve is complete
-        dissolveMaterial.SetFloat("DissolveAmount", 1f);
-    }
+    //    // Ensure the dissolve is complete
+    //    dissolveMaterial.SetFloat("DissolveAmount", 1f);
+    //}
 }
