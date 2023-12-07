@@ -8,16 +8,13 @@ public class LiftableRock : Interactable
 
     private void Start()
     {
-        promptText = "pick up rock";
-        if (lever != null)
-        {
-            lever.enabled = false; // disables the lever script on the lever, so that it doesn't read an interactable
-        }
+        promptText = "Click to pick up rock";
     }
 
     override public void Interact(CharacterMotor charMotor)
     {
-        lever.enabled = true; // enables the lever script on the lever because the player has the rock now
+        lever.PlayerGainRock(); // tells the lever script that the player has the rock now
+        PlayerCursor.DeselectObj(); // makes the player cursor deselect this object
         gameObject.SetActive(false); // sets this game object to inactive because the player has "picked it up"
     }
 }

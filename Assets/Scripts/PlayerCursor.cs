@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerCursor : MonoBehaviour
 {
+    private static PlayerCursor instance; // active player curssor at the moment
+
     [SerializeField] private Image cursorIcon; // the cursor icon on the player canvas
     private Color defaultCursorColor; // default color of the cursor, will change to white when there is an object selected
     [SerializeField] private TMPro.TextMeshProUGUI promptTextBox; // a text box for prompts when you select an interactable object
@@ -16,6 +18,7 @@ public class PlayerCursor : MonoBehaviour
 
     void Start()
     {
+        instance = this; // set this to the active player cursor
         if (cursorIcon != null)
         {
             defaultCursorColor = cursorIcon.color; // save the default color of the cursorIcon so we can change it around later
@@ -32,7 +35,7 @@ public class PlayerCursor : MonoBehaviour
         {
             selectedObject = selected; // make it the selected object
             cursorIcon.color = Color.white; // change the cursor color
-            promptTextBox.text = "Click to " + selectedObject.GetPromptText(); // set the prompt text to that of the interactable
+            promptTextBox.text = selectedObject.GetPromptText(); // set the prompt text to that of the interactable
         }
     }
 
@@ -51,6 +54,14 @@ public class PlayerCursor : MonoBehaviour
                 promptTextBox.text = "";
             }
         }
+    }
+
+    public static void DeselectObj() // called by an Interactable if it disables itself to make the cursor stop detecting it, 
+        // because presumably any interactable disabling itself is currently being interacted with
+    {
+        instance.selectedObject = null;
+        instance.cursorIcon.color = instance.defaultCursorColor;
+        instance.promptTextBox.text = "";
     }
 
     private void Update()
