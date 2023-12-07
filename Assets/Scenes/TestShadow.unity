@@ -1949,6 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4867f1193eef947229710726ec6b1fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverMenu: {fileID: 0}
 --- !u!1 &1565556991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4867f1193eef947229710726ec6b1fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverMenu: {fileID: 0}
 --- !u!4 &1070199001323794020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1070199001456197918, guid: 604dd0d58d8111248a1b80b9506d05a2, type: 3}
