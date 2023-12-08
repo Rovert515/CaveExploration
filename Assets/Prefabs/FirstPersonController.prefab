@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 7838836180786848159}
   - component: {fileID: 7431100764600065501}
   - component: {fileID: 3597780495345383095}
-  - component: {fileID: 1708812934653950801}
+  - component: {fileID: 2798590628104305339}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canControl: 1
   useFixedUpdate: 1
+  footsteps: {fileID: 8300000, guid: cda18661f545740449097ba436236c48, type: 3}
   movement:
     maxForwardSpeed: 10
     maxSidewaysSpeed: 10
@@ -582,7 +583,7 @@ MonoBehaviour:
   stepEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!82 &1708812934653950801
+--- !u!82 &2798590628104305339
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -592,9 +593,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 41327bcc22a4f4b35b9355ec30cc59ee, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
