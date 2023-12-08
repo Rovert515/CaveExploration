@@ -1,4 +1,4 @@
-﻿
+
 //    MIT License
 //     
 //    Copyright (c) 2017 Dustin Whirle
@@ -25,29 +25,32 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace BLINDED_AM_ME{
+namespace BLINDED_AM_ME
+{
 
 	[RequireComponent(typeof(MeshFilter))]
 	[RequireComponent(typeof(MeshRenderer))]
 	[RequireComponent(typeof(Path_Comp))]
-	public class Trail_Mesh : MonoBehaviour {
+	public class Trail_Mesh : MonoBehaviour
+	{
 
 
-		public bool   removeDuplicateVertices = false; // removes doubles
-		public Mesh   segment_sourceMesh;
+		public bool removeDuplicateVertices = false; // removes doubles
+		public Mesh segment_sourceMesh;
 
 		private float _segment_length;
 		private float _segment_MinZ;
 		private float _segment_MaxZ;
 
 		private Path_Comp _path;
-		private Transform  _helpTransform1;
-		private Transform  _helpTransform2;
+		private Transform _helpTransform1;
+		private Transform _helpTransform2;
 
 		private Mesh_Maker _maker = new Mesh_Maker();
 
 #if UNITY_EDITOR
-		public enum LightmapUnwrapping{
+		public enum LightmapUnwrapping
+		{
 			UseFirstUvSet,
 			DefaultUnwrapParam
 		}
@@ -57,9 +60,11 @@ namespace BLINDED_AM_ME{
 		/// <summary>
 		/// You can call this during runtime and in the editor
 		/// </summary>
-		public void ShapeIt(){
+		public void ShapeIt()
+		{
 
-			if(segment_sourceMesh == null){
+			if (segment_sourceMesh == null)
+			{
 				Debug.LogError("missing source mesh");
 				return;
 			}
@@ -81,10 +86,13 @@ namespace BLINDED_AM_ME{
 			transform.rotation = oldRotation;
 
 #if UNITY_EDITOR
-			if(!Application.isPlaying){
+			if (!Application.isPlaying)
+			{
 				DestroyImmediate(_helpTransform1.gameObject);
 				DestroyImmediate(_helpTransform2.gameObject);
-			}else{
+			}
+			else
+			{
 				Destroy(_helpTransform1.gameObject);
 				Destroy(_helpTransform2.gameObject);
 			}
@@ -94,16 +102,18 @@ namespace BLINDED_AM_ME{
 #endif
 		}
 
-		private void Craft(){
+		private void Craft()
+		{
 
 			_path = GetComponent<Path_Comp>();
 			Path_Point pointA = _path.GetPathPoint(0.0f);
 			Path_Point pointB = pointA;
-		
 
-			for(float dist=0.0f; dist<_path._path.TotalDistance; dist+=_segment_length){
-				
-				pointB = _path.GetPathPoint(Mathf.Clamp(dist + _segment_length,0,_path._path.TotalDistance));
+
+			for (float dist = 0.0f; dist < _path._path.TotalDistance; dist += _segment_length)
+			{
+
+				pointB = _path.GetPathPoint(Mathf.Clamp(dist + _segment_length, 0, _path._path.TotalDistance));
 
 				_helpTransform1.rotation = Quaternion.LookRotation(pointA.forward, pointA.up);
 				_helpTransform1.position = transform.TransformPoint(pointA.point);
@@ -118,26 +128,30 @@ namespace BLINDED_AM_ME{
 
 		}
 
-		private void Add_Segment(){
+		private void Add_Segment()
+		{
 
 			int[] indices;
 
 			// go throughout the submeshes
-			for(int sub=0; sub<segment_sourceMesh.subMeshCount; sub++){
+			for (int sub = 0; sub < segment_sourceMesh.subMeshCount; sub++)
+			{
 				indices = segment_sourceMesh.GetIndices(sub);
-				for(int i=0; i<indices.Length; i+=3){
+				for (int i = 0; i < indices.Length; i += 3)
+				{
 
 
 					AddTriangle(new int[]{
 						indices[i],
-	                    indices[i+1],
-	                    indices[i+2]
-					},sub);
+						indices[i+1],
+						indices[i+2]
+					}, sub);
 				}
 			}
 		}
 
-		private void AddTriangle( int[] indices, int submesh){
+		private void AddTriangle(int[] indices, int submesh)
+		{
 
 			// vertices
 			Vector3[] verts = new Vector3[3]{
@@ -171,16 +185,17 @@ namespace BLINDED_AM_ME{
 			Vector4 tangentA, tangentB;
 			Matrix4x4 localToWorld_A = _helpTransform1.localToWorldMatrix;
 			Matrix4x4 localToWorld_B = _helpTransform2.localToWorldMatrix;
-			Matrix4x4 worldToLocal =   transform.worldToLocalMatrix;
-			for(int i=0; i<3; i++){
+			Matrix4x4 worldToLocal = transform.worldToLocalMatrix;
+			for (int i = 0; i < 3; i++)
+			{
 
 				lerpValue = Math_Functions.Value_from_another_Scope(verts[i].z, _segment_MinZ, _segment_MaxZ, 0.0f, 1.0f);
 				verts[i].z = 0.0f;
-					
+
 				pointA = localToWorld_A.MultiplyPoint(verts[i]); // to world
 				pointB = localToWorld_B.MultiplyPoint(verts[i]);
 
-				verts[i] = worldToLocal.MultiplyPoint(Vector3.Lerp(pointA, pointB,lerpValue)); // to local
+				verts[i] = worldToLocal.MultiplyPoint(Vector3.Lerp(pointA, pointB, lerpValue)); // to local
 
 				normA = localToWorld_A.MultiplyVector(norms[i]);
 				normB = localToWorld_B.MultiplyVector(norms[i]);
@@ -199,18 +214,20 @@ namespace BLINDED_AM_ME{
 		}
 
 
-		private void ScanSourceMesh(){
+		private void ScanSourceMesh()
+		{
 
 			float min_z = 0.0f, max_z = 0.0f;
 
 			// find length
-			for(int i=0; i<segment_sourceMesh.vertexCount;i++){
+			for (int i = 0; i < segment_sourceMesh.vertexCount; i++)
+			{
 
 				Vector3 vert = segment_sourceMesh.vertices[i];
-				if(vert.z < min_z)
+				if (vert.z < min_z)
 					min_z = vert.z;
 
-				if(vert.z > max_z)
+				if (vert.z > max_z)
 					max_z = vert.z;
 			}
 
@@ -220,29 +237,34 @@ namespace BLINDED_AM_ME{
 
 		}
 
-		private void Apply(){
+		private void Apply()
+		{
 
 
-			if(removeDuplicateVertices){
+			if (removeDuplicateVertices)
+			{
 				_maker.RemoveDoubles();
 			}
 
 #if UNITY_EDITOR
-			if(!Application.isPlaying){
+			if (!Application.isPlaying)
+			{
 
-				switch(lightmapUnwrapping){
-				case LightmapUnwrapping.UseFirstUvSet:
-					GetComponent<MeshFilter>().mesh = _maker.GetMesh();
-					break;
-				case LightmapUnwrapping.DefaultUnwrapParam:
-					GetComponent<MeshFilter>().mesh = _maker.GetMesh_GenerateSecondaryUVSet();
-					break;
-				default:
-					GetComponent<MeshFilter>().mesh = _maker.GetMesh();
-					break;
+				switch (lightmapUnwrapping)
+				{
+					case LightmapUnwrapping.UseFirstUvSet:
+						GetComponent<MeshFilter>().mesh = _maker.GetMesh();
+						break;
+					case LightmapUnwrapping.DefaultUnwrapParam:
+						GetComponent<MeshFilter>().mesh = _maker.GetMesh_GenerateSecondaryUVSet();
+						break;
+					default:
+						GetComponent<MeshFilter>().mesh = _maker.GetMesh();
+						break;
 				}
 
-			}else
+			}
+			else
 				GetComponent<MeshFilter>().mesh = _maker.GetMesh();
 #else
 			GetComponent<MeshFilter>().mesh = _maker.GetMesh();
