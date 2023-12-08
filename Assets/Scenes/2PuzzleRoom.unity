@@ -835,6 +835,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4572783783184152, guid: f61b2bee68d853c4ab7baf6062cda8d4, type: 3}
   m_PrefabInstance: {fileID: 891494125}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &261178833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+  m_PrefabInstance: {fileID: 1391250963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &273053576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4976853331106008, guid: 57bc482487154a64085c1d0847e454b3, type: 3}
@@ -1874,6 +1879,10 @@ PrefabInstance:
       propertyPath: currentColor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8860384972243757718, guid: fe3c720caf425c2458b758f7a7aa66f3, type: 3}
+      propertyPath: hiddenMessage
+      value: 
+      objectReference: {fileID: 261178833}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6329,6 +6338,10 @@ PrefabInstance:
       propertyPath: currentColor
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8860384972243757718, guid: fe3c720caf425c2458b758f7a7aa66f3, type: 3}
+      propertyPath: hiddenMessage
+      value: 
+      objectReference: {fileID: 261178833}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6841,6 +6854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlowyRock
       objectReference: {fileID: 0}
+    - target: {fileID: 8860384972243757718, guid: fe3c720caf425c2458b758f7a7aa66f3, type: 3}
+      propertyPath: hiddenMessage
+      value: 
+      objectReference: {fileID: 261178833}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
