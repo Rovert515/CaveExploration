@@ -43,17 +43,6 @@ public class Dialogue_Repository : MonoBehaviour
             )
         );
 
-    //After first shadow monster dialogue
-    static DialogueManager.DialogueState hallwayShadowDialogue =
-        new DialogueManager.DialogueState("N/A", "",
-            new DialogueManager.DialogueState("What the hell was that?!", "What? Is something wrong?",
-                new DialogueManager.DialogueState("I swear I just one of the shadows move.", 
-                    "It's probabably just your mind playing tricks on you.",
-                    new DialogueManager.DialogueState("I... okay.", "Shine your flashlight at it, maybe?")
-                )
-            )
-        );
-
     //After scaring away shadow dialogue
     static DialogueManager.DialogueState scaredShadowDialogue1 =
         new DialogueManager.DialogueState("N/A", "",
@@ -281,11 +270,6 @@ public class Dialogue_Repository : MonoBehaviour
         }
     }
     
-    //Trigger for 1st Hallway Shadow Dialogue
-    public static void HallwayShadowDialogueTrigger()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(hallwayShadowDialogue);
-    }
     
     //Trigger for 1st Scaring Away Shadow Dialogue
     public static void ScareShadowDialogueTrigger1()
