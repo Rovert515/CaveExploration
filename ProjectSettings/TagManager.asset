@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PauseMenu
-  - GameOverMenu
+  - HelpMenu
+  - SettingsMenu
+  - TitleMenu
   layers:
   - Default
   - TransparentFX
