@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/1StartRoom.unity
     guid: 6a36f8771c5154f15be796a791114b9f
   - enabled: 1
-    path: Assets/Scenes/Puzzle Room 2.unity
-    guid: af38b97da8cff444286b29770dcf4f00
+    path: Assets/Scenes/2PuzzleRoom.unity
+    guid: d15654fb40b5a4aac94cdff287cebdc1
+  - enabled: 1
+    path: Assets/Scenes/3FinalRoom.unity
+    guid: ce6a0fcb8d702416a9d122328ad25c1c
   - enabled: 0
     path: Assets/Scenes/PauseTesting.unity
     guid: 35b84f1483bed8848b1e01f71cbf8c43

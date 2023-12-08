@@ -67,15 +67,22 @@ public class GlowyRock : Interactable
 
     private void Start()
     {
-        greenRock = GetComponent<MeshRenderer>();
+        promptText = "Click to touch the crystals";
+
         foreach (Transform child in transform)
         {
+            if (child.tag == "Green")
+            {
+                greenRock = child.GetComponent<MeshRenderer>();
+            }
             if (child.tag == "Red")
             {
                 redRock = child.GetComponent<MeshRenderer>();
             }
             if (child.tag == "Blue")
+            {
                 blueRock = child.GetComponent<MeshRenderer>();
+            }
         }
         ChangeColor(currentColor); // sets the currentColor to itself, but in the proces makes sure that the right color is actually visible
         totalStones.AddColor(currentColor);
