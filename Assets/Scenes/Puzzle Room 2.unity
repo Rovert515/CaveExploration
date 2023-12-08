@@ -3836,6 +3836,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4976853331106008, guid: 57bc482487154a64085c1d0847e454b3, type: 3}
   m_PrefabInstance: {fileID: 1048631018}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1049040147
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753728641, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_Name
+      value: GlowRock (RIght)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
 --- !u!1001 &1050673551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4563,6 +4620,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4004468145395006, guid: a0ac4c6540ad663468d86b7d6bb07c9d, type: 3}
   m_PrefabInstance: {fileID: 1201805428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1260607088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753728641, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_Name
+      value: GlowRock (Left)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
 --- !u!1001 &1303547265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7408,6 +7522,63 @@ Transform:
   - {fileID: 1201692619}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8339649245220256937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753371297, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357666078753728641, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
+      propertyPath: m_Name
+      value: Glow Rock (Middle)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8260fe4d6cb3c9046ad0d431abe8a81b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7441,3 +7612,6 @@ SceneRoots:
   - {fileID: 1777002974}
   - {fileID: 1515275797}
   - {fileID: 1732586174}
+  - {fileID: 1049040147}
+  - {fileID: 1260607088}
+  - {fileID: 8339649245220256937}
