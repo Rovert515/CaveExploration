@@ -11,6 +11,7 @@ TagManager:
   - BeginningDialogue
   - Hallway1Dialogue
   - Hallway2Dialogue
+  - PuzzleRoom1Dialogue
   layers:
   - Default
   - TransparentFX

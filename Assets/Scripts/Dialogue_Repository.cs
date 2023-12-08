@@ -5,12 +5,6 @@ using UnityEngine;
 public class Dialogue_Repository : MonoBehaviour
 {
 
-    //Flashlight Gotten Dialogue (Part 1)
-    static DialogueManager.DialogueState flashlightDialogue =
-        new DialogueManager.DialogueState("N/A", "", 
-            new DialogueManager.DialogueState("Found it.", "Great, let's get out of here.")
-        );
-
     //First Hallway Dialogue (Part 1)
     static DialogueManager.DialogueState hallway1Dialogue =
         new DialogueManager.DialogueState("N/A", "",
@@ -103,12 +97,6 @@ public class Dialogue_Repository : MonoBehaviour
                     new DialogueManager.DialogueState("Maybe I can weigh it down with something...")
                 )
             )
-        );
-
-    //Solving the first puzzle room dialogue
-    static DialogueManager.DialogueState solvedPuzzle1Dialogue =
-        new DialogueManager.DialogueState("N/A", "",
-            new DialogueManager.DialogueState("I did it!", "Great! Into the unknown!")
         );
 
     //Walking down second tunnel hallway (Part 2)
@@ -267,10 +255,12 @@ public class Dialogue_Repository : MonoBehaviour
             if (gameObject.tag == "Hallway1Dialogue") //if the object is the trigger for the hallway dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(hallway1Dialogue);
+                this.enabled = false;
             }
             else if (gameObject.tag == "PuzzleRoom1Dialogue") //if the object is the trigger for the 1st puzzle room dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom1Dialogue);
+                this.enabled = false;
             }
             else if (gameObject.tag == "Hallway2Dialogue") //if the object is the trigger for the hallway dialogue
             {
@@ -290,18 +280,6 @@ public class Dialogue_Repository : MonoBehaviour
             }
         }
     }
-
-    //Trigger for Beginning Dialogue
-    public static void BeginningDialogueTrigger()
-    {
-        
-    }
-
-    //Trigger for Flashlight Dialogue
-    public static void FlashlightDialogueTrigger()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(flashlightDialogue);
-    }
     
     //Trigger for 1st Hallway Shadow Dialogue
     public static void HallwayShadowDialogueTrigger()
@@ -313,13 +291,6 @@ public class Dialogue_Repository : MonoBehaviour
     public static void ScareShadowDialogueTrigger1()
     {
         DialogueManager.currentDialogueManager.SetDialogueState(scaredShadowDialogue1);
-    }
-
-    
-    //Trigger for Solving 1st Puzzle Dialogue
-    public static void SolvePuzzle1DialogueTrigger()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(solvedPuzzle1Dialogue);
     }
     
     //Trigger for 2nd Scaring Away Shadow Dialogue
