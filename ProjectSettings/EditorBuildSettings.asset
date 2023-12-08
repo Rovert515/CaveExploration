@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Starting Scene.unity
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 2a3b0107b3853234485af46211eccf53
+  - enabled: 1
+    path: Assets/Scenes/1StartRoom.unity
     guid: 6a36f8771c5154f15be796a791114b9f
   - enabled: 1
     path: Assets/Scenes/Puzzle Room 2.unity
     guid: af38b97da8cff444286b29770dcf4f00
+  - enabled: 0
+    path: Assets/Scenes/PauseTesting.unity
+    guid: 35b84f1483bed8848b1e01f71cbf8c43
   m_configObjects: {}

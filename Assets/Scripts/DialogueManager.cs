@@ -43,6 +43,10 @@ public class DialogueManager : MonoBehaviour
             return null;
         }
 
+        public DialogueState(string optionT) // a constructor for a DialogueState that ends the dialogue (with player input)
+        {
+            optionTxt = optionT;
+        }
         public DialogueState(string optionT, string messageT) // a constructor for a DialogueState with no options (will default to Continue)
         {
             optionTxt = optionT;
@@ -77,6 +81,8 @@ public class DialogueManager : MonoBehaviour
     private AudioSource currentAudioSource; // the current audiosource, that voice lines will be played to,
                                             // set in awake to be the one attached to the active camera
 
+    private CharacterMotor playerMotor;
+
     // the local UI elements for the walkie talkie and text options
     [SerializeField] private GameObject walkieTalkie;
     private UnityEngine.UI.Image walkieImageOn; // image component of the walkie talkie when it is on (primary object)
@@ -92,6 +98,8 @@ public class DialogueManager : MonoBehaviour
 
         currentAudioSource = Camera.main.GetComponent<AudioSource>(); // sets the currentAudioSource to the one attached to the current camera
         currentAudioSource.loop = false; // make sure the current audio source doesn't loop
+
+        playerMotor = GameObject.FindWithTag("Player").GetComponent<CharacterMotor>();
 
         UnityEngine.UI.Image[] walkieImages = walkieTalkie.GetComponentsInChildren<UnityEngine.UI.Image>(true);
         if (walkieImages.Length < 2 ) // just a little thing to send an error message to the console if our canvas is set up incorrectly
@@ -115,6 +123,15 @@ public class DialogueManager : MonoBehaviour
 
     public void SetDialogueState(DialogueState state) // set the current Dialogue State to the one inputted and update relevant UI elements
     {
+
+        playerMotor.enabled = false;
+
+        if (state.GetMessageTxt() == null) // if the message text is null (i.e. only player response) ends the dialogue
+        {
+            WipeDialogueState();
+            return;
+        }
+
         if (currentDialogueState == null) // if the current DialogueState is null, we need to reactivate walkietalkie and enable the messagetxt
         {
             walkieImageOn.enabled = true;
@@ -135,16 +152,30 @@ public class DialogueManager : MonoBehaviour
         {
             option0Display.enabled = true;
             option0Display.text = "1. " + currentDialogueState.GetFollowup(OptionChoice.Select0).GetOptionTxt();
+
             if (currentDialogueState.GetFollowup(OptionChoice.Select1) != null) // if there's a followup, set it up
             {
                 option1Display.enabled = true;
                 option1Display.text = "2. " + currentDialogueState.GetFollowup(OptionChoice.Select1).GetOptionTxt();
+
                 if (currentDialogueState.GetFollowup(OptionChoice.Select2) != null) // if there's a followup, set it up
                 {
                     option2Display.enabled = true;
                     option2Display.text = "3. " + currentDialogueState.GetFollowup(OptionChoice.Select2).GetOptionTxt();
-                } else { option2Display.enabled = false; option2Display.text = null; }
-            } else { option1Display.enabled = false; option1Display.text = null; }
+                } 
+                else 
+                { 
+                    option2Display.enabled = false; 
+                    option2Display.text = null; 
+                }
+            } 
+            else 
+            { 
+                option1Display.enabled = false; 
+                option1Display.text = null;
+                option2Display.enabled = false;
+                option2Display.text = null;
+            }
         }
         else  // if there are no followups (because of the constructor, if there's none in the first spot there aren't any at all)
         {
@@ -172,6 +203,10 @@ public class DialogueManager : MonoBehaviour
         option2Display.enabled = false;
         option2Display.text = null;
 
+        walkieImageOn.enabled = false;
+        walkieImageOff.enabled = true;
+
         currentAudioSource.Stop();
+        playerMotor.enabled = true;
     }
 }

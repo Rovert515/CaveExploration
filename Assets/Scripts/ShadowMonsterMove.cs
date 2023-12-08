@@ -9,11 +9,18 @@ public class ShadowMonsterMove : MonoBehaviour
     private Transform playerPos; // the position of the player, given to it by the collider that triggers it
 
     private SkinnedMeshRenderer[] meshes; // the meshes that make up this ShadowMonster
+    // private Material dissolveMaterial;
+
+    private GameOverManager gameOverManager;
+
+    private GameObject flakes;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         meshes = GetComponentsInChildren<SkinnedMeshRenderer>();
+        flakes = GetComponentInChildren<ParticleSystem>(true).gameObject;
+        // dissolveMaterial = GetComponentInChildren<SkinnedMeshRenderer>().material;
     }
 
     public void ReceivePlayerPos(Transform player) // just a write only accessor to playerPos for ShadowSpawn to give the player position to
@@ -28,11 +35,13 @@ public class ShadowMonsterMove : MonoBehaviour
         {
             agent.destination = playerPos.position;
         }
+
+    
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // if it's run into the player
+        if (collision.gameObject.CompareTag("Player")) // if it runs into the player
         {
             PlayerDeath();
         }
@@ -40,14 +49,46 @@ public class ShadowMonsterMove : MonoBehaviour
 
     private void PlayerDeath()
     {
-        // YOU DIED!
+        // Open the game over menu using the GameOverManager
+        if (gameOverManager != null)
+        {
+            gameOverManager.OpenGameOverMenu();
+        }
     }
 
     public void Illuminated() // this monster is illuminated, and so it dies
     {
-        foreach (SkinnedMeshRenderer mesh in meshes)
-        {
-            mesh.material.color = Color.red; // temp code
-        }
+   
+            // Enable particle system "Flakes" if it exists
+            if (flakes != null)
+            {
+                flakes.gameObject.SetActive(true);
+            }
+            float delay = 0.7f; // Adjust the delay time as needed
+            Destroy(gameObject, delay);
+
+          
+    
+
+        // We can try to mess with the dissolve effect but not a priority
+        // StartCoroutine(DissolveAnimation()); 
     }
+
+
+    //IEnumerator DissolveAnimation()
+    //{
+    //    float duration = 1.0f; // Adjust the duration of the dissolve effect
+    //    float startTime = Time.time;
+
+    //    while (Time.time - startTime < duration)
+    //    {
+    //        float dissolveAmount = Mathf.Lerp(0f, 1f, (Time.time - startTime) / duration);
+    //        dissolveMaterial.SetFloat("DissolveAmount", dissolveAmount);
+
+    //        yield return null;
+    //    }
+
+    //    // Ensure the dissolve is complete
+    //    dissolveMaterial.SetFloat("DissolveAmount", 1f);
+    //}
 }
