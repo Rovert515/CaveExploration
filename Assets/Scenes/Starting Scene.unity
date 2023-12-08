@@ -3102,7 +3102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610622268726666, guid: 074e9fd3c543c144e972e97dff953b88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.07
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4610622268726666, guid: 074e9fd3c543c144e972e97dff953b88, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8642,7 +8642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4128338240042816524, guid: c77d98ea480977148837a60e8cbacd48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.35
+      value: 42.93
       objectReference: {fileID: 0}
     - target: {fileID: 4128338240042816524, guid: c77d98ea480977148837a60e8cbacd48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9802,6 +9802,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShadowMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 826241860010164644, guid: 604dd0d58d8111248a1b80b9506d05a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1070199001456197918, guid: 604dd0d58d8111248a1b80b9506d05a2, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9777205
@@ -9812,11 +9816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1070199001456197918, guid: 604dd0d58d8111248a1b80b9506d05a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.175
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1070199001456197918, guid: 604dd0d58d8111248a1b80b9506d05a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.26
+      value: -7.92
       objectReference: {fileID: 0}
     - target: {fileID: 1070199001456197918, guid: 604dd0d58d8111248a1b80b9506d05a2, type: 3}
       propertyPath: m_LocalRotation.w

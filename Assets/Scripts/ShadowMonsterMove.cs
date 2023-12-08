@@ -41,7 +41,7 @@ public class ShadowMonsterMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // if it's run into the player
+        if (collision.gameObject.CompareTag("Player")) // if it runs into the player
         {
             PlayerDeath();
         }
@@ -64,7 +64,7 @@ public class ShadowMonsterMove : MonoBehaviour
             {
                 flakes.gameObject.SetActive(true);
             }
-            float delay = 1.5f; // Adjust the delay time as needed
+            float delay = 0.7f; // Adjust the delay time as needed
             Destroy(gameObject, delay);
 
           
