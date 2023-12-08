@@ -725,37 +725,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4264342752944190, guid: dd97834f6f07b5f48967e131f371b7f0, type: 3}
   m_PrefabInstance: {fileID: 1517785044}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &432678070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 6082794417719720951, guid: f14662a3d184749a19ff47cfb64dfcd7, type: 3}
-  m_PrefabInstance: {fileID: 905360970}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 432678071}
-  m_Layer: 0
-  m_Name: 
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &432678071
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432678070}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &446133480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4572783783184152, guid: f61b2bee68d853c4ab7baf6062cda8d4, type: 3}
@@ -1207,7 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c47ce4658da6c4eb6377405b223046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFlashLight: {fileID: 432678070}
+  playerFlashLight: {fileID: 892165393}
 --- !u!54 &686801500
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1750,6 +1719,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 918e9495f6e289f4983e7e744ac76c15, type: 3}
+--- !u!1 &892165393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6082794417719720951, guid: f14662a3d184749a19ff47cfb64dfcd7, type: 3}
+  m_PrefabInstance: {fileID: 864242157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &899085313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4076,7 +4050,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 432678071}
   - {fileID: 1941603072}
   - {fileID: 5025815214058970531}
   - {fileID: 1828418877}
