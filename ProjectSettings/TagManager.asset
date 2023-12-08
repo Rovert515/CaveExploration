@@ -7,6 +7,8 @@ TagManager:
   - PauseMenu
   - HelpMenu
   - SettingsMenu
+  - Red
+  - Blue
   - TitleMenu
   - BeginningDialogue
   - Hallway1Dialogue
