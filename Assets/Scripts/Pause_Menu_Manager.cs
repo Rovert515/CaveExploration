@@ -29,7 +29,10 @@ public class Pause_Menu_Manager : MonoBehaviour
         SettingsMenu.SetActive(false);
 
         Player = GameObject.FindWithTag("Player");
+
         chunkyScript = Player.GetComponentInChildren<Assets.Pixelation.Scripts.Chunky>(true);
+
+
         chunkyScript.enabled = false;
 
         isPaused = false;

@@ -81,6 +81,8 @@ public class DialogueManager : MonoBehaviour
     private AudioSource currentAudioSource; // the current audiosource, that voice lines will be played to,
                                             // set in awake to be the one attached to the active camera
 
+    private CharacterMotor playerMotor;
+
     // the local UI elements for the walkie talkie and text options
     [SerializeField] private GameObject walkieTalkie;
     private UnityEngine.UI.Image walkieImageOn; // image component of the walkie talkie when it is on (primary object)
@@ -96,6 +98,8 @@ public class DialogueManager : MonoBehaviour
 
         currentAudioSource = Camera.main.GetComponent<AudioSource>(); // sets the currentAudioSource to the one attached to the current camera
         currentAudioSource.loop = false; // make sure the current audio source doesn't loop
+
+        playerMotor = GameObject.FindWithTag("Player").GetComponent<CharacterMotor>();
 
         UnityEngine.UI.Image[] walkieImages = walkieTalkie.GetComponentsInChildren<UnityEngine.UI.Image>(true);
         if (walkieImages.Length < 2 ) // just a little thing to send an error message to the console if our canvas is set up incorrectly
@@ -119,6 +123,8 @@ public class DialogueManager : MonoBehaviour
 
     public void SetDialogueState(DialogueState state) // set the current Dialogue State to the one inputted and update relevant UI elements
     {
+
+        playerMotor.enabled = false;
 
         if (state.GetMessageTxt() == null) // if the message text is null (i.e. only player response) ends the dialogue
         {
@@ -201,5 +207,6 @@ public class DialogueManager : MonoBehaviour
         walkieImageOff.enabled = true;
 
         currentAudioSource.Stop();
+        playerMotor.enabled = true;
     }
 }
