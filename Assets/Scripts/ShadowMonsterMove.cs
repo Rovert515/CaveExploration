@@ -64,7 +64,7 @@ public class ShadowMonsterMove : MonoBehaviour
             {
                 flakes.gameObject.SetActive(true);
             }
-            float delay = 0.7f; // Adjust the delay time as needed
+            float delay = 1f; // Adjust the delay time as needed
             Destroy(gameObject, delay);
 
           
