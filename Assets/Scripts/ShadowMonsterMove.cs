@@ -44,16 +44,8 @@ public class ShadowMonsterMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")) // if it runs into the player
         {
-            PlayerDeath();
-        }
-    }
-
-    private void PlayerDeath()
-    {
-        // Open the game over menu using the GameOverManager
-        if (gameOverManager != null)
-        {
-            gameOverManager.OpenGameOverMenu();
+            gameOverManager = collision.gameObject.GetComponentInChildren<GameOverManager>(true);
+            gameOverManager.gameObject.SetActive(true); // open the game over menu
         }
     }
 

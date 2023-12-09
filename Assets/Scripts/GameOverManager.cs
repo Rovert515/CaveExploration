@@ -10,13 +10,13 @@ public class GameOverManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameOverMenu = GameObject.FindWithTag("GameOverMenu");
+        gameOverMenu = this.gameObject;
         gameOverMenu.SetActive(false);
     }
 
 
 
-    // Update is called once per frame
+    /*// Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -28,11 +28,11 @@ public class GameOverManager : MonoBehaviour
     public void OpenGameOverMenu()
     {
         gameOverMenu.SetActive(true);
-    }
+    }*/
 
 
-        // Restarts the current scene
-        public void RestartScene()
+    // Restarts the current scene
+    public void RestartScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
