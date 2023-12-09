@@ -10,8 +10,8 @@ public class Door : Interactable
 
     private void Start()
     {
-        if (promptText == null) // if this is connected to a lever, the prompt text will already have been changed by Lock()
-            // in the lever's Awake(), so we only set it to the default if it's null
+        if (promptText == null) // if this is connected to a lever or key, the prompt text will already have been changed by Lock()
+            // in the other object's Awake(), so we only set it to the default if it's null
         {
             promptText = "Click to open door";
         }
