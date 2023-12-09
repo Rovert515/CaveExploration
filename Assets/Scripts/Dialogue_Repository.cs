@@ -113,7 +113,7 @@ public class Dialogue_Repository : MonoBehaviour
         );
 
     //After scaring away multiple shadows in the second hallway
-    static DialogueManager.DialogueState scaredShadowDialogue2 =
+    static DialogueManager.DialogueState shadowDialogue =
         new DialogueManager.DialogueState("N/A", "", 
             new DialogueManager.DialogueState("Believe me or don't, but there are definitely shadow monsters down here.", 
                 "...", 
@@ -143,12 +143,6 @@ public class Dialogue_Repository : MonoBehaviour
                 "and another door.", "It's locked I presume?", 
                 new DialogueManager.DialogueState("Probably, I'll see if I can find some way to open it.")
             )
-        );
-
-    //After solving the second puzzle
-    static DialogueManager.DialogueState solvedPuzzle2Dialogue =
-        new DialogueManager.DialogueState("N/A", "", 
-            new DialogueManager.DialogueState("Got it!", "Awesome, you're almost out of there!")
         );
 
     //Walking down third tunnel hallway
@@ -215,15 +209,22 @@ public class Dialogue_Repository : MonoBehaviour
             else if (gameObject.tag == "PuzzleRoom1Dialogue") //if the object is the trigger for the 1st puzzle room dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom1Dialogue);
-                gameObject.SetActive(false); ;
+                gameObject.SetActive(false);
             }
             else if (gameObject.tag == "Hallway2Dialogue") //if the object is the trigger for the hallway dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(hallway2Dialogue);
+                gameObject.SetActive(false);
             }
             else if (gameObject.tag == "PuzzleRoom2Dialogue") //if the object is the trigger for the 2nd puzzle room dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom2Dialogue);
+                gameObject.SetActive(false);
+            }
+            else if (gameObject.tag == "ShadowDialogue") //if the object is the trigger for the 2nd puzzle room dialogue
+            {
+                DialogueManager.currentDialogueManager.SetDialogueState(shadowDialogue);
+                gameObject.SetActive(false);
             }
             else if (gameObject.tag == "Hallway3Dialogue") //if the object is the trigger for the hallway dialogue
             {
@@ -234,18 +235,6 @@ public class Dialogue_Repository : MonoBehaviour
                 DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom3Dialogue);
             }
         }
-    }
-    
-    //Trigger for 2nd Scaring Away Shadow Dialogue
-    public static void ScareShadowDialogueTrigger2()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(scaredShadowDialogue2);
-    }
-    
-    //Trigger for Solving 2nd Puzzle Dialogue
-    public static void SolvePuzzle2DialogueTrigger()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(solvedPuzzle2Dialogue);
     }
 
     //Trigger for Large Amount of Shadow Spawn Dialogue
