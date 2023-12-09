@@ -150,29 +150,17 @@ public class Dialogue_Repository : MonoBehaviour
         new DialogueManager.DialogueState("N/A", "", 
             new DialogueManager.DialogueState("So, I should be near the end here?", "Yeah. Hopefully.", 
                 new DialogueManager.DialogueState("Hopefully?", "Yeah.", 
-                    new DialogueManager.DialogueState("...what do you mean by-")
-                )
-            )
-        );
-
-    //Shadows then begin to spawn in a large number, cutting off the previous dialogue
-    static DialogueManager.DialogueState shadowHordeDialogue =
-        new DialogueManager.DialogueState("N/A", "What's wrong?", 
-            new DialogueManager.DialogueState("T-there's some shadow monsters.", "Well, scare them away!", 
-                new DialogueManager.DialogueState("There's a lot!!", "Then run!!!")
-            )
-        );
-
-    //Arrival in the third puzzle room
-    static DialogueManager.DialogueState puzzleRoom3Dialogue =
-        new DialogueManager.DialogueState("N/A", "", 
-            new DialogueManager.DialogueState("There's no exit tunnel!! What do I do??", "Okay okay okay, call me crazy-", 
-                new DialogueManager.DialogueState("Shadow monsters are breathing down my neck, I can handle crazy.", 
-                    "You need to cause an explosion.", 
-                    new DialogueManager.DialogueState("...I stand corrected.", "I'm serious! It might be your only chance.", 
-                        new DialogueManager.DialogueState("...", "", 
-                            new DialogueManager.DialogueState("Okay.", "",
-                                new DialogueManager.DialogueState("Let's do this.")
+                    new DialogueManager.DialogueState("...what do you mean by-", "What's wrong?", 
+                        new DialogueManager.DialogueState("There's no exit tunnel!! What do I do??", "Okay okay okay, call me crazy-", 
+                            new DialogueManager.DialogueState("Shadow monsters are breathing down my neck, I can handle crazy.", 
+                                "You need to cause an explosion.", 
+                                new DialogueManager.DialogueState("...I stand corrected.", "I'm serious! It might be your only chance.", 
+                                    new DialogueManager.DialogueState("...", "", 
+                                        new DialogueManager.DialogueState("Okay.", "",
+                                            new DialogueManager.DialogueState("Let's do this.")
+                                        )
+                                    )
+                                )
                             )
                         )
                     )
@@ -230,17 +218,7 @@ public class Dialogue_Repository : MonoBehaviour
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(hallway3Dialogue);
             }
-            else if (gameObject.tag == "PuzzleRoom3Dialogue") //if the object is the trigger for the 3rd puzzle room dialogue
-            {
-                DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom3Dialogue);
-            }
         }
-    }
-
-    //Trigger for Large Amount of Shadow Spawn Dialogue
-    public static void ShadowHordeDialogue()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(shadowHordeDialogue);
     }
 
     //Trigger for After Explosion Dialogue

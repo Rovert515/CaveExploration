@@ -20,6 +20,7 @@ TagManager:
   - ShadowMonster
   - PuzzleRoom2Dialogue
   - ShadowDialogue
+  - Hallway3Dialogue
   layers:
   - Default
   - TransparentFX
