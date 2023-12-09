@@ -461,8 +461,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 256
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 22}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_BoxSize: {x: 14.945886, y: 10, z: 22}
+  m_BoxOffset: {x: 2.4729447, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
@@ -4490,8 +4490,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 256
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 25}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_BoxSize: {x: 10, y: 10, z: 28.876204}
+  m_BoxOffset: {x: 0, y: 0, z: -1.9381018}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
@@ -6333,7 +6333,7 @@ Transform:
   m_GameObject: {fileID: 1843886274}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.98, y: 2.69, z: 12.28}
+  m_LocalPosition: {x: -13.3, y: 2.69, z: 12.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6604,7 +6604,7 @@ Transform:
   m_GameObject: {fileID: 1960009879}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.5, y: 6.2, z: 12.28}
+  m_LocalPosition: {x: 30.6, y: 6.2, z: 8.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6625,8 +6625,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 256
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 30, y: 10, z: 25}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_BoxSize: {x: 51.45555, y: 10, z: 25}
+  m_BoxOffset: {x: 4.2038116, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
