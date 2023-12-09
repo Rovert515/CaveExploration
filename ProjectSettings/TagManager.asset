@@ -15,6 +15,9 @@ TagManager:
   - Hallway2Dialogue
   - PuzzleRoom1Dialogue
   - Green
+  - GameOverMenu
+  - ShadowMonsterDetection
+  - ShadowMonster
   layers:
   - Default
   - TransparentFX

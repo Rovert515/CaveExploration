@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 8295506563345068542}
   m_Layer: 0
   m_Name: ShadowMonster
-  m_TagString: Untagged
+  m_TagString: ShadowMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
