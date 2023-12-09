@@ -14,6 +14,7 @@ public class ShadowMonsterMove : MonoBehaviour
     private GameOverManager gameOverManager;
 
     private GameObject flakes;
+    protected float delay = 1f; // Adjust the delay time as needed
 
     void Start()
     {
@@ -64,7 +65,8 @@ public class ShadowMonsterMove : MonoBehaviour
             {
                 flakes.gameObject.SetActive(true);
             }
-            float delay = 1f; // Adjust the delay time as needed
+            
+
             Destroy(gameObject, delay);
 
           
