@@ -43,51 +43,6 @@ public class Dialogue_Repository : MonoBehaviour
             )
         );
 
-    //After first shadow monster dialogue
-    static DialogueManager.DialogueState hallwayShadowDialogue =
-        new DialogueManager.DialogueState("N/A", "",
-            new DialogueManager.DialogueState("What the hell was that?!", "What? Is something wrong?",
-                new DialogueManager.DialogueState("I swear I just one of the shadows move.", 
-                    "It's probabably just your mind playing tricks on you.",
-                    new DialogueManager.DialogueState("I... okay.", "Shine your flashlight at it, maybe?")
-                )
-            )
-        );
-
-    //After scaring away shadow dialogue
-    static DialogueManager.DialogueState scaredShadowDialogue1 =
-        new DialogueManager.DialogueState("N/A", "",
-            new DialogueManager.DialogueState("That... worked...", "",
-                new DialogueManager.DialogueState("What *was* that?!", "What was what?",
-                    new DialogueManager.DialogueState("The shadow monster!", "...",
-                        new DialogueManager.DialogueState("I'm not crazy.", "I didn't say anything.",
-                            new DialogueManager.DialogueState("Seriously, there was a shadow creature or monster or something!", 
-                                "Okay okay. I mean, look I don't... not believe you?",
-                                new DialogueManager.DialogueState("Really sounds like you do... uh don't.", 
-                                    "I believe you saw something that was scared away by the flashlight. " + 
-                                    "But it probably wasn't a shadow monster.",
-                                    new DialogueManager.DialogueState("Still not sure how I feel about there being something down here with me.", 
-                                        "Can't help you there. Just keep scaring whatever it is away.",
-                                        new DialogueManager.DialogueState("[sarcastic] My hero.")
-                                    )
-                                )
-                            ),
-                            new DialogueManager.DialogueState("Maybe I did hit my head...", 
-                                "There should be a first aid kit somewhere in that bag.",
-                                new DialogueManager.DialogueState("None that I can see.", "Maybe you also lost it in the fall.",
-                                    new DialogueManager.DialogueState("[quietly] Or maybe those shadows took it.", 
-                                        "I didn't quite catch that.",
-                                        new DialogueManager.DialogueState("Nothing nothing, I'll keep an eye out for it.")
-                                    )
-                                )
-                            ),
-                            new DialogueManager.DialogueState("[say nothing]")
-                        )
-                    )
-                )
-            )
-        );
-
     //Arriving at the first puzzle room dialogue
     static DialogueManager.DialogueState puzzleRoom1Dialogue =
         new DialogueManager.DialogueState("N/A", "Okay, there should be a door to the rest of the cave system around here.",
@@ -255,12 +210,12 @@ public class Dialogue_Repository : MonoBehaviour
             if (gameObject.tag == "Hallway1Dialogue") //if the object is the trigger for the hallway dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(hallway1Dialogue);
-                this.enabled = false;
+                gameObject.SetActive(false);
             }
             else if (gameObject.tag == "PuzzleRoom1Dialogue") //if the object is the trigger for the 1st puzzle room dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom1Dialogue);
-                this.enabled = false;
+                gameObject.SetActive(false); ;
             }
             else if (gameObject.tag == "Hallway2Dialogue") //if the object is the trigger for the hallway dialogue
             {
@@ -279,18 +234,6 @@ public class Dialogue_Repository : MonoBehaviour
                 DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom3Dialogue);
             }
         }
-    }
-    
-    //Trigger for 1st Hallway Shadow Dialogue
-    public static void HallwayShadowDialogueTrigger()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(hallwayShadowDialogue);
-    }
-    
-    //Trigger for 1st Scaring Away Shadow Dialogue
-    public static void ScareShadowDialogueTrigger1()
-    {
-        DialogueManager.currentDialogueManager.SetDialogueState(scaredShadowDialogue1);
     }
     
     //Trigger for 2nd Scaring Away Shadow Dialogue
