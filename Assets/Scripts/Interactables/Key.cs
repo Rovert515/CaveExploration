@@ -20,6 +20,7 @@ public class Key : Interactable
     {
         door.Unlock();
         pickedUp = true;
+        PlayerCursor.DeselectObj(); // makes the player cursor deselect this object
         gameObject.SetActive(false);
     }
 }

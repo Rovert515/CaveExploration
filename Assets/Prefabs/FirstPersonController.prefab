@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 7512354809496213271}
   - component: {fileID: 3683441992144646685}
   - component: {fileID: 7160613060682362967}
+  - component: {fileID: 9210099607060028717}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -388,6 +389,19 @@ MonoBehaviour:
   shader: {fileID: 4800000, guid: 021f74a6bc502364ea09233306e2eac2, type: 3}
   SprTex: {fileID: 2800000, guid: e24d36d8ff948514689bd64ae291d616, type: 3}
   Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &9210099607060028717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046954791137578661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860515d2a97534a41b4f19b6c8919d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeFrequency: 0.2
 --- !u!1 &4159513121120627619
 GameObject:
   m_ObjectHideFlags: 0
