@@ -61,13 +61,19 @@ public class GlowyRock : Interactable
     MeshRenderer blueRock;
     MeshRenderer redRock;
 
-    [SerializeField] private GameObject hiddenMessage; // a hidden message that is only revealed when all three stones are green
+    [SerializeField] private Key hiddenKey; // a hiddenKey that is only revealed when all three stones are green
+    //[SerializeField] private GameObject correspondingLightObject; // the gameobject for the point light, because for some reason you can't
+        // have a serializable Light field
+    [SerializeField] Light correspondingLight; // a light that changes color
+        // to match it
 
     public StoneColor currentColor = StoneColor.Green;
 
     private void Start()
     {
         promptText = "Click to touch the crystals";
+
+        //correspondingLight = correspondingLightObject.GetComponent<UnityEngine.Experimental.GlobalIllumination.PointLight>();
 
         foreach (Transform child in transform)
         {
@@ -86,7 +92,7 @@ public class GlowyRock : Interactable
         }
         ChangeColor(currentColor); // sets the currentColor to itself, but in the proces makes sure that the right color is actually visible
         totalStones.AddColor(currentColor);
-        hiddenMessage.SetActive(false); // hides the hidden message at the start
+        hiddenKey.gameObject.SetActive(false); // hides the hiddenKey at the start
     }
 
     private void ChangeColor(StoneColor targetColor)
@@ -97,24 +103,33 @@ public class GlowyRock : Interactable
                 greenRock.enabled = true;
                 redRock.enabled = false;
                 blueRock.enabled = false;
+                correspondingLight.color = Color.green;
                 break;
             case StoneColor.Red:
                 greenRock.enabled = false;
                 redRock.enabled = true;
                 blueRock.enabled = false;
+                correspondingLight.color = Color.red;
                 break;
             case StoneColor.Blue:
                 greenRock.enabled = false;
                 redRock.enabled = false;
                 blueRock.enabled = true;
+                correspondingLight.color = Color.blue;
                 break;
         }
         totalStones.SubColor(currentColor); // the current color is changing so reduce the total number of stones of its color
         currentColor = targetColor; // we want to record which color we're currently displaying
         totalStones.AddColor(currentColor); // increase the number of stones of the new current color
-        if (totalStones.greenStones >= 3)
+        if (totalStones.greenStones >= 3 & !hiddenKey.pickedUp)
         {
-            hiddenMessage.SetActive(true); // reveal the hidden message
+            hiddenKey.gameObject.SetActive(true); // reveal the hiddenKey
+        } else
+        {
+            if (hiddenKey.gameObject.activeSelf) // if the hiddenKey was active but now not all the lights are green, hide it
+            {
+                hiddenKey.gameObject.SetActive(false);
+            }
         }
         return;
     }
