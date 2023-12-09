@@ -7,9 +7,15 @@ public class Key : Interactable
     [SerializeField] private Door door; // the door that the key unlocks
 
     public bool pickedUp = false; // determines whether or not it has been picked up (so that illuminating glowy rocks, which would normally
-        // enable it, cannot enable it if it's been picked up)
+                                  // enable it, cannot enable it if it's been picked up)
 
-    void Start()
+    //After solving the second puzzle
+    static DialogueManager.DialogueState solvedPuzzle2Dialogue =
+        new DialogueManager.DialogueState("N/A", "",
+            new DialogueManager.DialogueState("Got it!", "Awesome, you're almost out of there!")
+        );
+
+    void Awake()
     {
         promptText = "Click to pick up key";
 
@@ -21,5 +27,6 @@ public class Key : Interactable
         door.Unlock();
         pickedUp = true;
         gameObject.SetActive(false);
+        DialogueManager.currentDialogueManager.SetDialogueState(solvedPuzzle2Dialogue);
     }
 }
