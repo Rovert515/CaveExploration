@@ -65,6 +65,7 @@ public class ShadowMonsterMove : MonoBehaviour
             {
                 flakes.gameObject.SetActive(true);
             }
+
             Destroy(gameObject, delay);
 
         // We can try to mess with the dissolve effect but not a priority
