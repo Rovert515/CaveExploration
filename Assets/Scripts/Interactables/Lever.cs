@@ -20,7 +20,6 @@ public class Lever : Interactable
         promptText = "This lever is stuck.";
         if (door != null) // if it's connected to a door, make sure that door locks
         {
-            Debug.Log("123");
             door.Lock();
         }
         if (placedRock != null)
