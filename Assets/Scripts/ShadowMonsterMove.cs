@@ -57,7 +57,7 @@ public class ShadowMonsterMove : MonoBehaviour
         }
     }
 
-    public void Illuminated() // this monster is illuminated, and so it dies
+    public virtual void Illuminated() // this monster is illuminated, and so it dies
     {
    
             // Enable particle system "Flakes" if it exists
@@ -65,12 +65,8 @@ public class ShadowMonsterMove : MonoBehaviour
             {
                 flakes.gameObject.SetActive(true);
             }
-            
 
             Destroy(gameObject, delay);
-
-          
-    
 
         // We can try to mess with the dissolve effect but not a priority
         // StartCoroutine(DissolveAnimation()); 
