@@ -123,8 +123,10 @@ public class DialogueManager : MonoBehaviour
 
     public void SetDialogueState(DialogueState state) // set the current Dialogue State to the one inputted and update relevant UI elements
     {
-
-        playerMotor.enabled = false;
+        if (playerMotor != null)
+        {
+            playerMotor.enabled = false;
+        }
 
         if (state.GetMessageTxt() == null) // if the message text is null (i.e. only player response) ends the dialogue
         {
@@ -207,6 +209,9 @@ public class DialogueManager : MonoBehaviour
         walkieImageOff.enabled = true;
 
         currentAudioSource.Stop();
-        playerMotor.enabled = true;
+        if (playerMotor != null)
+        {
+            playerMotor.enabled = true;
+        }
     }
 }
