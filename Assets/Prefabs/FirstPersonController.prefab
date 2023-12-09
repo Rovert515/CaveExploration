@@ -499,7 +499,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canControl: 1
   useFixedUpdate: 1
-  footsteps: {fileID: 8300000, guid: cda18661f545740449097ba436236c48, type: 3}
   movement:
     maxForwardSpeed: 5
     maxSidewaysSpeed: 5
@@ -611,7 +610,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 41327bcc22a4f4b35b9355ec30cc59ee, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
