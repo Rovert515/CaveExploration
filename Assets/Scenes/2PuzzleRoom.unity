@@ -457,10 +457,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuController
       objectReference: {fileID: 0}
-    - target: {fileID: 7726812662141804693, guid: 31de3e3d544add34b9e661b6668ad062, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2627,11 +2623,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731801940}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &732692189 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1454373857832846, guid: 57bc482487154a64085c1d0847e454b3, type: 3}
-  m_PrefabInstance: {fileID: 150039946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!108 &732692191 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108990059368549358, guid: 57bc482487154a64085c1d0847e454b3, type: 3}
@@ -4455,10 +4446,6 @@ PrefabInstance:
     - target: {fileID: 2018214387842133492, guid: c4108aa9e0c545843b17e250ddde6590, type: 3}
       propertyPath: m_Name
       value: Walkie Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2018214387842133492, guid: c4108aa9e0c545843b17e250ddde6590, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2411483696980151625, guid: c4108aa9e0c545843b17e250ddde6590, type: 3}
       propertyPath: m_Pivot.x
@@ -8064,17 +8051,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 261178834}
     - target: {fileID: 8860384972243757718, guid: fe3c720caf425c2458b758f7a7aa66f3, type: 3}
-      propertyPath: hiddenMessage
-      value: 
-      objectReference: {fileID: 261178833}
-    - target: {fileID: 8860384972243757718, guid: fe3c720caf425c2458b758f7a7aa66f3, type: 3}
       propertyPath: correspondingLight
       value: 
       objectReference: {fileID: 732692191}
-    - target: {fileID: 8860384972243757718, guid: fe3c720caf425c2458b758f7a7aa66f3, type: 3}
-      propertyPath: correspondingLightObject
-      value: 
-      objectReference: {fileID: 732692189}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

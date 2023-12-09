@@ -14,25 +14,6 @@ public class GameOverManager : MonoBehaviour
         gameOverMenu.SetActive(false);
     }
 
-
-
-    /*// Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            OpenGameOverMenu();
-        }
-    }
-
-    public void OpenGameOverMenu()
-    {
-        gameOverMenu.SetActive(true);
-    }*/
-
-
-    // Restarts the current scene
-
     public void OpenMenu()
     {
         Cursor.visible = true; // free up the cursor so that we can navigate the game over menu
@@ -51,8 +32,6 @@ public class GameOverManager : MonoBehaviour
     // Quits the game
     public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-
         Application.Quit();
 
     }

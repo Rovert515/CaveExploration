@@ -641,6 +641,7 @@ MonoBehaviour:
   option0Display: {fileID: 2791162592008851176}
   option1Display: {fileID: 3296337327586964285}
   option2Display: {fileID: 3993154242307385756}
+  beginTransmission: {fileID: 8300000, guid: 41c4e51dbaf6e3545920cb6f1e4bc3e8, type: 3}
 --- !u!1 &5665082224344003465
 GameObject:
   m_ObjectHideFlags: 0
