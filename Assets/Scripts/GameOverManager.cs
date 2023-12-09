@@ -32,8 +32,18 @@ public class GameOverManager : MonoBehaviour
 
 
     // Restarts the current scene
+
+    public void OpenMenu()
+    {
+        Cursor.visible = true; // free up the cursor so that we can navigate the game over menu
+        Cursor.lockState = CursorLockMode.None;
+        gameObject.SetActive(true); // open the game over menu
+    }
+
     public void RestartScene()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }

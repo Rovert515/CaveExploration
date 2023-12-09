@@ -15,6 +15,8 @@ public class Credits : MonoBehaviour
         creditBody.transform.position += new Vector3(0, scrollSpeed * Time.deltaTime);
         if (creditBody.transform.position.y >= 800)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
         }
     }
