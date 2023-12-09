@@ -244,12 +244,12 @@ public class Dialogue_Repository : MonoBehaviour
             if (gameObject.tag == "Hallway1Dialogue") //if the object is the trigger for the hallway dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(hallway1Dialogue);
-                this.enabled = false;
+                gameObject.SetActive(false);
             }
             else if (gameObject.tag == "PuzzleRoom1Dialogue") //if the object is the trigger for the 1st puzzle room dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(puzzleRoom1Dialogue);
-                this.enabled = false;
+                gameObject.SetActive(false); ;
             }
             else if (gameObject.tag == "Hallway2Dialogue") //if the object is the trigger for the hallway dialogue
             {
