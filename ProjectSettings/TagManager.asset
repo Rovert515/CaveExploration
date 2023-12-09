@@ -18,6 +18,8 @@ TagManager:
   - GameOverMenu
   - ShadowMonsterDetection
   - ShadowMonster
+  - PuzzleRoom2Dialogue
+  - ShadowDialogue
   layers:
   - Default
   - TransparentFX
