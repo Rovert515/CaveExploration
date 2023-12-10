@@ -19,11 +19,13 @@ public class GameOverManager : MonoBehaviour
     {
         Cursor.visible = true; // free up the cursor so that we can navigate the game over menu
         Cursor.lockState = CursorLockMode.None;
+        Pause_Menu_Manager.isPaused = true;
         gameObject.SetActive(true); // open the game over menu
     }
 
     public void RestartScene()
     {
+        Pause_Menu_Manager.isPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -33,7 +35,7 @@ public class GameOverManager : MonoBehaviour
     // Quits the game
     public void QuitGame()
     {
+        Pause_Menu_Manager.isPaused = false;
         Application.Quit();
-
     }
 }
