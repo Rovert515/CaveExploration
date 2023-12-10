@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // Menu manager for the title screen
 public class Title_Menu_Manager : MonoBehaviour

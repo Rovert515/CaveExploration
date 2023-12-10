@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 /// MouseLook rotates the transform based on the mouse delta.
@@ -19,7 +20,9 @@ public class MouseLook : MonoBehaviour {
 
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
+
 	public static float sensitivity = 5F; // default of 5, settings will let you change it from 1-10
+	public Slider sensitivitySlider;
 
 	public float minimumX = -360F;
 	public float maximumX = 360F;
@@ -31,6 +34,7 @@ public class MouseLook : MonoBehaviour {
 
 	void Update ()
 	{
+
 		if (axes == RotationAxes.MouseXAndY)
 		{
 			float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivity;
@@ -58,5 +62,10 @@ public class MouseLook : MonoBehaviour {
 		// Make the rigid body not change rotation
 		if (GetComponent<Rigidbody>())
 			GetComponent<Rigidbody>().freezeRotation = true;
+	}
+
+    public void SensitivitySlider()
+	{
+		sensitivity = sensitivitySlider.value;
 	}
 }
