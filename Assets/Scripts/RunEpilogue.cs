@@ -46,6 +46,7 @@ public class RunEpilogue : MonoBehaviour
     private IEnumerator EpilogueEnd()
     {
         yield return new WaitForSeconds(2f);
+        audioSource.volume = 0.01f; // set to correct volume for the finalAmbiance (that file is really damn loud)
         audioSource.PlayOneShot(finalAmbiance); // plays the ambient noise
         blackScreen.gameObject.SetActive(false); // turn off the black screen so they can see the sky
         yield return new WaitForSeconds(finalDelay);
