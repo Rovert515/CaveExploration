@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Pixelation.Example.Scripts;
+using UnityEngine.UI;
 using UnityEngine;
 
 // Menu manager script for the pause menu
@@ -16,6 +17,12 @@ public class Pause_Menu_Manager : MonoBehaviour
 
     private bool isPaused;
     private bool menuOpen;
+
+    public Slider sensitivitySlider;
+    public Slider volumeSlider;
+
+    public static float currentVolume;
+    public static float currentSensitivity;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +45,8 @@ public class Pause_Menu_Manager : MonoBehaviour
 
         isPaused = false;
         menuOpen = false;
+
+        currentSensitivity = MouseLook.sensitivity;
     }
 
     // Update is called once per frame
@@ -104,6 +113,7 @@ public class Pause_Menu_Manager : MonoBehaviour
     //Open settings menu
     public void OpenSettings()
     {
+        sensitivitySlider.value = currentSensitivity;
         menuOpen = true;
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(true);
