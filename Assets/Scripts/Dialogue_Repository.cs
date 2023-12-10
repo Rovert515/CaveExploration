@@ -13,7 +13,7 @@ public class Dialogue_Repository : MonoBehaviour
                 new DialogueManager.DialogueState("What time is it out there?", "A little past midnight.",
                     new DialogueManager.DialogueState ("Oh, sorry to keep you up so late.", 
                         "Hey don't worry, I'm just gonna get one hell of an overtime check.", 
-                        new DialogueManager.DialogueState("Don't you have to get home?", 
+                        new DialogueManager.DialogueState("Don't you have to get home?",
                             "Nah, got a bed here and everything.",
                             new DialogueManager.DialogueState("Sounds lonely.", "It's not so bad. I like the quiet.",
                                 new DialogueManager.DialogueState("Hm.", 
@@ -69,11 +69,11 @@ public class Dialogue_Repository : MonoBehaviour
     static DialogueManager.DialogueState hallway2Dialogue =
         new DialogueManager.DialogueState("N/A", "",
             new DialogueManager.DialogueState("I’m seeing a lot of support beams and stuff, what's that about?",
-                "Oh um, I think there used to be some mining operations here? Back when that was a thing people did. " +
+                "Oh um, I think there used to be some kind of mining operation here? Back when that was a thing people did. " +
                 "It's abandoned now, obviously, but the mining tunnels remain.",
                 new DialogueManager.DialogueState("It’s spooky.", "Remanant of another time, I guess.",
                     new DialogueManager.DialogueState("Feels haunted but like, in a mundane way, not a ghost way.", 
-                        "In what way?",
+                        "Yeah, in what way?",
                         new DialogueManager.DialogueState("Like your childhood home after someone else has moved in.", "",
                             new DialogueManager.DialogueState("Your old bedroom is an office, the dining room is seated for " +
                                 "4 instead of 5, the cabinets are all organized differently.", "",
@@ -112,19 +112,28 @@ public class Dialogue_Repository : MonoBehaviour
             )
         );
 
-    //After scaring away multiple shadows in the second hallway
-    static DialogueManager.DialogueState shadowDialogue =
+    //Arrival at the second puzzle
+    static DialogueManager.DialogueState puzzleRoom2Dialogue =
         new DialogueManager.DialogueState("N/A", "", 
-            new DialogueManager.DialogueState("Believe me or don't, but there are definitely shadow monsters down here.", 
-                "...", 
-                new DialogueManager.DialogueState("...?", "...okay.", 
-                    new DialogueManager.DialogueState("Okay?", "Okay. Either you're crazy and I lose nothing from believing you.", 
-                        new DialogueManager.DialogueState("...", "OR you're telling the truth. And I'm not about to be the " + 
-                            "idiot in a horror movie who doesn't believe the victim.", 
-                            new DialogueManager.DialogueState("I'm not a victim.", "Not yet!", 
-                                new DialogueManager.DialogueState("...", "Too soon?", 
-                                    new DialogueManager.DialogueState ("Yeah, just a little.", "Sorry.", 
-                                        new DialogueManager.DialogueState ("...", "", 
+            new DialogueManager.DialogueState("Alright, I'm at another small chamber, there's a lot of old mining gear " + 
+                "and another door.", "It's locked I presume?", 
+                new DialogueManager.DialogueState("Probably, I'll see if I can find some way to open it.")
+            )
+        );
+
+    //After scaring away multiple shadows in the third hallway
+    static DialogueManager.DialogueState shadowDialogue =
+        new DialogueManager.DialogueState("N/A", "",
+            new DialogueManager.DialogueState("Believe me or don't, but there are definitely shadow monsters down here.",
+                "...",
+                new DialogueManager.DialogueState("...?", "...okay.",
+                    new DialogueManager.DialogueState("Okay?", "Okay. Either you're crazy and I lose nothing from believing you.",
+                        new DialogueManager.DialogueState("...", "OR you're telling the truth. And I'm not about to be the " +
+                            "idiot in a horror movie who doesn't believe the victim.",
+                            new DialogueManager.DialogueState("I'm not a victim.", "Not yet!",
+                                new DialogueManager.DialogueState("...", "Too soon?",
+                                    new DialogueManager.DialogueState("Yeah, just a little.", "Sorry.",
+                                        new DialogueManager.DialogueState("...", "",
                                             new DialogueManager.DialogueState("Thanks for believing me, though.")
                                         )
                                     )
@@ -136,21 +145,12 @@ public class Dialogue_Repository : MonoBehaviour
             )
         );
 
-    //Arrival at the second puzzle
-    static DialogueManager.DialogueState puzzleRoom2Dialogue =
-        new DialogueManager.DialogueState("N/A", "", 
-            new DialogueManager.DialogueState("Alright, I'm at another small chamber, there's a lot of old mining gear " + 
-                "and another door.", "It's locked I presume?", 
-                new DialogueManager.DialogueState("Probably, I'll see if I can find some way to open it.")
-            )
-        );
-
     //Walking down third tunnel hallway
     static DialogueManager.DialogueState hallway3Dialogue =
         new DialogueManager.DialogueState("N/A", "", 
             new DialogueManager.DialogueState("So, I should be near the end here?", "Yeah. Hopefully.", 
                 new DialogueManager.DialogueState("Hopefully?", "Yeah.", 
-                    new DialogueManager.DialogueState("...what do you mean by-", "What's wrong?", 
+                    new DialogueManager.DialogueState("...what do you mean by- shit.", "What's wrong?", 
                         new DialogueManager.DialogueState("There's no exit tunnel!! What do I do??", "Okay okay okay, call me crazy-", 
                             new DialogueManager.DialogueState("Shadow monsters are breathing down my neck, I can handle crazy.", 
                                 "You need to cause an explosion.", 

@@ -7,7 +7,7 @@ public class StartingSceneDialogue : MonoBehaviour
 
     //Introduction Dialogue (Part 2)
     static DialogueManager.DialogueState begin2 =
-        new DialogueManager.DialogueState("Distress signal?", "All our equipment is outfitted with one if it experiences enough damage. " +
+        new DialogueManager.DialogueState("Distress signal?", "All our equipment is outfitted with one that triggers if it experiences enough damage. " +
             "Are you one of the hikers that left earlier? You missed your return time! Where are you?",
             new DialogueManager.DialogueState("I… don't know. I rented some equipment to go on a hike. " +
                 "I think I fell in a cave.", "Oh dear. Okay. Well, can you take stock for me?",
