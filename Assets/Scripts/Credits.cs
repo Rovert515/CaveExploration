@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// rolls the credits
 public class Credits : MonoBehaviour
 {
     public GameObject creditTitle;

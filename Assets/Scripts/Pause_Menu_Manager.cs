@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Pixelation.Example.Scripts;
 using UnityEngine;
 
+// Menu manager script for the pause menu
 public class Pause_Menu_Manager : MonoBehaviour
 {
 

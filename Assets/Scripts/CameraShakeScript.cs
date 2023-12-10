@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// NOT OURS stolen from online tutorial, with slight edits
+// NOT OURS borrowed from online tutorial, with slight edits
 
 //This script requires the component of Transform. It attaches a transform if none is attached.
 [RequireComponent(typeof(Transform))]

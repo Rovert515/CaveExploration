@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ShadowMonsterMove : MonoBehaviour
+// Controls the movement of a ShadowMonster, making it move towards the player across the nav mesh. If its Illuminated()
+// is called (by the player's FlashlightHitbox) the ShadowMonster dies. If it collides with the player, the player
+// goes to the gameover screen
+public class ShadowMonMove : MonoBehaviour
 {
     private NavMeshAgent agent; // the shadow monster's navmesh
     private Transform playerPos; // the position of the player, given to it by the collider that triggers it
@@ -60,26 +63,5 @@ public class ShadowMonsterMove : MonoBehaviour
         agent.enabled = false; // make it so it stops chasing the player now that it's been spotlit
 
         Destroy(gameObject, delay);
-
-        // We can try to mess with the dissolve effect but not a priority
-        // StartCoroutine(DissolveAnimation()); 
     }
-
-
-    //IEnumerator DissolveAnimation()
-    //{
-    //    float duration = 1.0f; // Adjust the duration of the dissolve effect
-    //    float startTime = Time.time;
-
-    //    while (Time.time - startTime < duration)
-    //    {
-    //        float dissolveAmount = Mathf.Lerp(0f, 1f, (Time.time - startTime) / duration);
-    //        dissolveMaterial.SetFloat("DissolveAmount", dissolveAmount);
-
-    //        yield return null;
-    //    }
-
-    //    // Ensure the dissolve is complete
-    //    dissolveMaterial.SetFloat("DissolveAmount", 1f);
-    //}
 }

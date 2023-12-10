@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// A Key that locks a connected door until the player "Picks it up" by clicking on it
 public class Key : Interactable
 {
     [SerializeField] private Door door; // the door that the key unlocks

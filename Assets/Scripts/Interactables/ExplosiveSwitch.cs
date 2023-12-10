@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// A switch that, when clicked on by the player cursor, freezes the player, shakes the camera, causes a rumbling sound
+// effect, and then transports the player to the epilogue
 public class ExplosiveSwitch : Interactable
 {
     [SerializeField] AudioClip explosion;

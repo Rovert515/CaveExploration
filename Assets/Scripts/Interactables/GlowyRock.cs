@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// A rock that glows green red or blue. Has attached crystals as children in each of the colors, as well as an
+// internal light that changes colors, and a light in a nearby lantern that changes colors to match it. Also keeps
+// track of how many rocks are currently glowing in each color, so that when all three GlowyRocks glow green they
+// reveal the hiddenKey they are attached to
 public class GlowyRock : Interactable
 {
     public enum StoneColor

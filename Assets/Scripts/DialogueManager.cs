@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Manages the conversation system: the state of the dialogue, those that follow it, and moving between them
 public class DialogueManager : MonoBehaviour
 {
     // enum for sending followup choices to DialogueState.GetFollowup
@@ -122,8 +123,8 @@ public class DialogueManager : MonoBehaviour
         option1Display.enabled = false;
         option2Display.enabled = false;
     }
-
-    public void SetDialogueState(DialogueState state) // set the current Dialogue State to the one inputted and update relevant UI elements
+    // set the current Dialogue State to the one inputted and update relevant UI elements
+    public void SetDialogueState(DialogueState state)
     {
         if (playerMotor != null)
         {
@@ -195,7 +196,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void WipeDialogueState() // set the current dialogue state to null and deactivate relevant UI elements
+    // set the current dialogue state to null and deactivate relevant UI elements
+    public void WipeDialogueState()
     {
         currentDialogueState = null;
         // hide option text, hide message text, end the audio if it's playing
