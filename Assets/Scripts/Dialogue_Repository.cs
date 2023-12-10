@@ -189,7 +189,8 @@ public class Dialogue_Repository : MonoBehaviour
                                     new DialogueManager.DialogueState("Okay.", "",
                                         new DialogueManager.DialogueState("Let's do this.")
                                     )
-                                )
+                                ),
+                                VoiceLines.globVoiceLines[52] // corresponding voice line
                             ),
                             VoiceLines.globVoiceLines[51] // corresponding voice line
                         ),
@@ -212,8 +213,10 @@ public class Dialogue_Repository : MonoBehaviour
                             new DialogueManager.DialogueState("I'm sorry..."), 
                             new DialogueManager.DialogueState("Goodbye...")
                         )
-                    )
-                )
+                    ),
+                    VoiceLines.globVoiceLines[54] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[53] // corresponding voice line
             )
         );
 
