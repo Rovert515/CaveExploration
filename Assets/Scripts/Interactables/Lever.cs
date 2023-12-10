@@ -14,7 +14,7 @@ public class Lever : Interactable
     //Solving the first puzzle room dialogue
     static DialogueManager.DialogueState solvedPuzzle1Dialogue =
         new DialogueManager.DialogueState("N/A", "",
-            new DialogueManager.DialogueState("I did it!", "Great! Into the unknown!")
+            new DialogueManager.DialogueState("I did it!", "Great! Into the unknown!", VoiceLines.globVoiceLines[31])
         );
 
     private void Awake()

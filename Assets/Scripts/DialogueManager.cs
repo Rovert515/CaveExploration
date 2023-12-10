@@ -48,31 +48,35 @@ public class DialogueManager : MonoBehaviour
         {
             optionTxt = optionT;
         }
-        public DialogueState(string optionT, string messageT) // a constructor for a DialogueState with no options (will default to Continue)
+        public DialogueState(string optionT, string messageT, AudioClip messageA=null) // a constructor for a DialogueState with no options (will default to Continue)
         {
             optionTxt = optionT;
             messageTxt = messageT;
+            messageAud = messageA;
         }
-        public DialogueState(string optionT, string messageT, DialogueState opt0) // a constructor for a DialogueState with one option
+        public DialogueState(string optionT, string messageT, DialogueState opt0, AudioClip messageA = null) // a constructor for a DialogueState with one option
         {
             optionTxt = optionT;
             messageTxt = messageT;
             option0 = opt0;
+            messageAud = messageA;
         }
-        public DialogueState(string optionT, string messageT, DialogueState opt0, DialogueState opt1) // a constructor for a DialogueState with two options
+        public DialogueState(string optionT, string messageT, DialogueState opt0, DialogueState opt1, AudioClip messageA = null) // a constructor for a DialogueState with two options
         {
             optionTxt = optionT;
             messageTxt = messageT;
             option0 = opt0;
             option1 = opt1;
+            messageAud = messageA;
         }
-        public DialogueState(string optionT, string messageT, DialogueState opt0, DialogueState opt1, DialogueState opt2) // a constructor for a DialogueState with three options
+        public DialogueState(string optionT, string messageT, DialogueState opt0, DialogueState opt1, DialogueState opt2, AudioClip messageA = null) // a constructor for a DialogueState with three options
         {
             optionTxt = optionT;
             messageTxt = messageT;
             option0 = opt0;
             option1 = opt1;
             option2 = opt2;
+            messageAud = messageA;
         }
     }
 
@@ -81,6 +85,8 @@ public class DialogueManager : MonoBehaviour
 
     private AudioSource currentAudioSource; // the current audiosource, that voice lines will be played to,
                                             // set in awake to be the one attached to the active camera
+    public VoiceLines currentVoiceLines; // the voice lines clip also attached to this, contains all of the
+                                         // game's voicelines
 
     private CharacterMotor playerMotor;
 
@@ -101,6 +107,8 @@ public class DialogueManager : MonoBehaviour
 
         currentAudioSource = Camera.main.GetComponent<AudioSource>(); // sets the currentAudioSource to the one attached to the current camera
         currentAudioSource.loop = false; // make sure the current audio source doesn't loop
+
+        currentVoiceLines = gameObject.GetComponent<VoiceLines>();
 
         playerMotor = GameObject.FindWithTag("Player").GetComponent<CharacterMotor>();
 

@@ -16,10 +16,14 @@ public class StartingSceneDialogue : MonoBehaviour
                     "You’ve probably fallen into one of the natural caves here. I'll help you look for a way out.",
                     new DialogueManager.DialogueState("It's so dark....",
                         "You should have a flashlight in that pack of yours.",
-                        new DialogueManager.DialogueState("I think I lost it when I fell. Hold on.")
-                    )
-                )
-            )
+                        new DialogueManager.DialogueState("I think I lost it when I fell. Hold on."),
+                        VoiceLines.globVoiceLines[5] // corresponding voice line
+                    ),
+                    VoiceLines.globVoiceLines[4] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[3] // corresponding voice line
+            ),
+            VoiceLines.globVoiceLines[2] // corresponding voice line
         );
 
     //Introduction Dialogue (Part 1)
@@ -27,16 +31,20 @@ public class StartingSceneDialogue : MonoBehaviour
         new DialogueManager.DialogueState("N/A", "Hello? Hello? Is anyone there? If you can hear me, please respond!",
             new DialogueManager.DialogueState("Hello?", "Oh thank god, I saw the distress single and " +
                 "I thought someone DIED!",
-                begin2
+                begin2,
+                VoiceLines.globVoiceLines[1] // corresponding voice line
             ),
             new DialogueManager.DialogueState("I'm here.", "Oh thank god, I saw the distress single and " +
                 "I thought someone DIED!",
-                begin2
+                begin2,
+                VoiceLines.globVoiceLines[1] // corresponding voice line
             ),
             new DialogueManager.DialogueState("Who is this?", "Oh thank god, I saw the distress single and " +
                 "I thought someone DIED!",
-                begin2
-            )
+                begin2,
+                VoiceLines.globVoiceLines[1] // corresponding voice line
+            ),
+            VoiceLines.globVoiceLines[0] // corresponding voice line
         );
 
     // Start is called before the first frame update

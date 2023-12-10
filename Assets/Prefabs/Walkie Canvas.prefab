@@ -308,6 +308,7 @@ RectTransform:
   - {fileID: 6362349511892668182}
   - {fileID: 2306030669923699915}
   - {fileID: 4363478129153706762}
+  - {fileID: 2578904527353898453}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -378,6 +379,106 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &2084996815773397103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2578904527353898453}
+  - component: {fileID: 2498654699298251680}
+  m_Layer: 0
+  m_Name: VoiceLineContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2578904527353898453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084996815773397103}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.1828105, y: 2.1828105, z: 2.1828105}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2411483696980151625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2498654699298251680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084996815773397103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3ea6750e25a2643a6e79509e0656bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceLines:
+  - {fileID: 8300000, guid: 58483c99dde8c9e4699502624dd12738, type: 3}
+  - {fileID: 8300000, guid: 31417f1903613b84286f4485b4470022, type: 3}
+  - {fileID: 8300000, guid: 5c94c049a6a536440968c3689f36c548, type: 3}
+  - {fileID: 8300000, guid: 3f81d32aeefdb284a9b81c703c002cb9, type: 3}
+  - {fileID: 8300000, guid: c0287d81970991943a9a7a774eb85028, type: 3}
+  - {fileID: 8300000, guid: 9a36a2a4a9a326842815b6d614fe1507, type: 3}
+  - {fileID: 8300000, guid: e7d9e0ff1cc2d0348b058a7a2e52ec50, type: 3}
+  - {fileID: 8300000, guid: d66f2fde8ca52874f8cb3cf1568796a5, type: 3}
+  - {fileID: 8300000, guid: 71db4be87760e38439b96cd9126405e1, type: 3}
+  - {fileID: 8300000, guid: f7a64e776ce41904dbdab4befcdb0464, type: 3}
+  - {fileID: 8300000, guid: 13446904ad9f25c4f8e1ac27c3fca1c2, type: 3}
+  - {fileID: 8300000, guid: d3297351676f9544fbbb5ec1ac595290, type: 3}
+  - {fileID: 8300000, guid: 0d1cee038944eae4e810597a6c08c8b1, type: 3}
+  - {fileID: 8300000, guid: d53f57717494b5b4c91ab711f4985788, type: 3}
+  - {fileID: 8300000, guid: b72871b687c0a7040a466798cb00505c, type: 3}
+  - {fileID: 8300000, guid: 00dc90f59efe7774487293c335f1ce2d, type: 3}
+  - {fileID: 8300000, guid: 01df2f38a330f3a49aec87a9e4172e18, type: 3}
+  - {fileID: 8300000, guid: 9580d3c7bad8a7c4d897467e652ee4af, type: 3}
+  - {fileID: 8300000, guid: cc12688f416d05948992decb0db1a025, type: 3}
+  - {fileID: 8300000, guid: 3eb95548fd212cf49b6133604c7488dc, type: 3}
+  - {fileID: 8300000, guid: bf6d04d15ec920e47842cac9c98b5d66, type: 3}
+  - {fileID: 8300000, guid: 2c1430baa9abb3844b2891652f71704f, type: 3}
+  - {fileID: 8300000, guid: f0d252e5323301f49b02fc6755478f87, type: 3}
+  - {fileID: 8300000, guid: fb6774598ec207d439a6ada98d71cd15, type: 3}
+  - {fileID: 8300000, guid: 9b8460b2d92ca634187d198ac8d4e466, type: 3}
+  - {fileID: 8300000, guid: 1f4494f48802cbd4a9ee6c11666344fc, type: 3}
+  - {fileID: 8300000, guid: 65f15703811dcb5499cb970d8da24298, type: 3}
+  - {fileID: 8300000, guid: a18164c7f35fd874dbce00d878893211, type: 3}
+  - {fileID: 8300000, guid: 2d9c5150888060041a6ec110105ce2b3, type: 3}
+  - {fileID: 8300000, guid: 80ea772ca0dae8448a392075567cb764, type: 3}
+  - {fileID: 8300000, guid: f73f01e7c51976b4d99bfca05b3f958a, type: 3}
+  - {fileID: 8300000, guid: e56c87b827935974ea9b583df9c20814, type: 3}
+  - {fileID: 8300000, guid: 86bb575236442884299597e9bb968bbc, type: 3}
+  - {fileID: 8300000, guid: f043c0cf99124ef4a948ab13eb868daa, type: 3}
+  - {fileID: 8300000, guid: 8dc37dfc36b1499498f7e35d533ad7c1, type: 3}
+  - {fileID: 8300000, guid: 8505d6347bb09c7419b84aaca8affab4, type: 3}
+  - {fileID: 8300000, guid: a4be8d42e8eeb4e478cf79ded918c2dc, type: 3}
+  - {fileID: 8300000, guid: 34c755f8bd7756a4b9e9bcc42b8ca3dd, type: 3}
+  - {fileID: 8300000, guid: efeb2a77e7d6f414fa7b30d184e76043, type: 3}
+  - {fileID: 8300000, guid: 53124ade323eff045a17f13149284d7c, type: 3}
+  - {fileID: 8300000, guid: 31ed8bd8eb3e2fe418b3862f57dcbfb9, type: 3}
+  - {fileID: 8300000, guid: 07239960ff7e65c43a1c19ffaa82cbdd, type: 3}
+  - {fileID: 8300000, guid: 36a284f4b9d17d6468d5c121097c66a4, type: 3}
+  - {fileID: 8300000, guid: 25dca7c144a11434aa61c0571453fea4, type: 3}
+  - {fileID: 8300000, guid: 50859a21920bbf8468495d57e88dfa39, type: 3}
+  - {fileID: 8300000, guid: 23d56c2f86951794ea6bf8af1edd81a4, type: 3}
+  - {fileID: 8300000, guid: 771282c3de2b26f48b1b05c24a3f1cdd, type: 3}
+  - {fileID: 8300000, guid: 1fb56968bde64a4439262cac003e9e40, type: 3}
+  - {fileID: 8300000, guid: 40caef6def4f1bc44a79b221bd8d014e, type: 3}
+  - {fileID: 8300000, guid: 5f1a606dca044664cb90a374e37923bf, type: 3}
+  - {fileID: 8300000, guid: ff2350d2234712c4281d33f8a32db2d1, type: 3}
+  - {fileID: 8300000, guid: e26c53b2591462d47853eee1c5a6e0e6, type: 3}
+  - {fileID: 8300000, guid: 7c0ff317cfece7b4db77468e40208a49, type: 3}
+  - {fileID: 8300000, guid: 776923f1eba960d40a838f0a26014174, type: 3}
+  - {fileID: 8300000, guid: 10f16b20addb2d1429d973a527c57486, type: 3}
 --- !u!1 &2120169083644170749
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a7a241c148656408907ad8923de97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentVoiceLines: {fileID: 0}
   walkieTalkie: {fileID: 3312118744884351389}
   messageTxtDisplay: {fileID: 1818484087157203728}
   option0Display: {fileID: 2791162592008851176}
