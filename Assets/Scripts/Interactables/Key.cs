@@ -13,8 +13,9 @@ public class Key : Interactable
     //After solving the second puzzle
     static DialogueManager.DialogueState solvedPuzzle2Dialogue =
         new DialogueManager.DialogueState("N/A", "",
-            new DialogueManager.DialogueState("Got it!", "Awesome, you're almost out of there!"),
-            VoiceLines.globVoiceLines[40] // corresponding voice line
+            new DialogueManager.DialogueState("Got it!", "Awesome, you're almost out of there!",
+                VoiceLines.globVoiceLines[40] // corresponding voice line
+            )
         );
 
     void Awake()
