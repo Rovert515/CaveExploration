@@ -92,6 +92,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option1Display;
     [SerializeField] private TextMeshProUGUI option2Display;
 
+    [SerializeField] private AudioClip beginTransmission; // audio clip played at the beginning of a transmission
+
     private void Awake()
     {
         currentDialogueManager = this; // sets the currently active DialogueManager to be this instance
@@ -149,6 +151,7 @@ public class DialogueManager : MonoBehaviour
         messageTxtDisplay.text = currentDialogueState.GetMessageTxt();
         currentAudioSource.clip = currentDialogueState.GetMessageAud(); // set the current voice line to the current audio source's clip
         currentAudioSource.Play(); // play the current voice line
+        currentAudioSource.PlayOneShot(beginTransmission);
 
         if (currentDialogueState.GetFollowup(OptionChoice.Select0) != null) // if there's a followup, set it up
         {

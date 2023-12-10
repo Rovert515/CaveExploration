@@ -32,7 +32,7 @@ public class ShadowMonsterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerPos != null) // if it's locked onto the player, move towards them
+        if (playerPos != null & agent.enabled) // if it's locked onto the player, move towards them
         {
             agent.destination = playerPos.position;
         }
@@ -45,20 +45,21 @@ public class ShadowMonsterMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) // if it runs into the player
         {
             gameOverManager = collision.gameObject.GetComponentInChildren<GameOverManager>(true);
-            gameOverManager.gameObject.SetActive(true); // open the game over menu
+            gameOverManager.OpenMenu();
         }
     }
 
     public virtual void Illuminated() // this monster is illuminated, and so it dies
     {
    
-            // Enable particle system "Flakes" if it exists
-            if (flakes != null)
-            {
-                flakes.gameObject.SetActive(true);
-            }
+         // Enable particle system "Flakes" if it exists
+        if (flakes != null)
+        {
+            flakes.gameObject.SetActive(true);
+        }
+        agent.enabled = false; // make it so it stops chasing the player now that it's been spotlit
 
-            Destroy(gameObject, delay);
+        Destroy(gameObject, delay);
 
         // We can try to mess with the dissolve effect but not a priority
         // StartCoroutine(DissolveAnimation()); 

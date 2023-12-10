@@ -64,8 +64,11 @@ public class GlowyRock : Interactable
     [SerializeField] private Key hiddenKey; // a hiddenKey that is only revealed when all three stones are green
     //[SerializeField] private GameObject correspondingLightObject; // the gameobject for the point light, because for some reason you can't
         // have a serializable Light field
-    [SerializeField] Light correspondingLight; // a light that changes color
-        // to match it
+    [SerializeField] Light correspondingLight; // a light in the lantern that changes color
+                                               // to match it
+    [SerializeField] Light internalLight; // an internal light that changes color to match it
+
+    [SerializeField] AudioClip puzzleSolved; // audio clip that plays when the player turns all the lights green
 
     public StoneColor currentColor = StoneColor.Green;
 
@@ -73,8 +76,7 @@ public class GlowyRock : Interactable
     {
         promptText = "Click to touch the crystals";
 
-        //correspondingLight = correspondingLightObject.GetComponent<UnityEngine.Experimental.GlobalIllumination.PointLight>();
-
+        
         foreach (Transform child in transform)
         {
             if (child.tag == "Green")
@@ -104,18 +106,21 @@ public class GlowyRock : Interactable
                 redRock.enabled = false;
                 blueRock.enabled = false;
                 correspondingLight.color = Color.green;
+                internalLight.color = Color.green;
                 break;
             case StoneColor.Red:
                 greenRock.enabled = false;
                 redRock.enabled = true;
                 blueRock.enabled = false;
                 correspondingLight.color = Color.red;
+                internalLight.color = Color.red;
                 break;
             case StoneColor.Blue:
                 greenRock.enabled = false;
                 redRock.enabled = false;
                 blueRock.enabled = true;
                 correspondingLight.color = Color.blue;
+                internalLight.color = Color.blue;
                 break;
         }
         totalStones.SubColor(currentColor); // the current color is changing so reduce the total number of stones of its color
@@ -124,6 +129,7 @@ public class GlowyRock : Interactable
         if (totalStones.greenStones >= 3 & !hiddenKey.pickedUp)
         {
             hiddenKey.gameObject.SetActive(true); // reveal the hiddenKey
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(puzzleSolved);
         } else
         {
             if (hiddenKey.gameObject.activeSelf) // if the hiddenKey was active but now not all the lights are green, hide it
