@@ -18,22 +18,30 @@ public class ShadowMonDialogue : ShadowMonMove
                                     "But it probably wasn't a shadow monster.",
                                     new DialogueManager.DialogueState("Still not sure how I feel about there being something down here with me.", 
                                         "Can't help you there. Just keep scaring whatever it is away.",
-                                        new DialogueManager.DialogueState("[sarcastic] My hero.")
-                                    )
-                                )
+                                        new DialogueManager.DialogueState("[sarcastic] My hero."),
+                                        VoiceLines.globVoiceLines[24] // corresponding voice line
+                                    ),
+                                    VoiceLines.globVoiceLines[23] // corresponding voice line
+                                ),
+                                VoiceLines.globVoiceLines[22] // corresponding voice line
                             ),
                             new DialogueManager.DialogueState("Maybe I did hit my head...", 
                                 "There should be a first aid kit somewhere in that bag.",
                                 new DialogueManager.DialogueState("None that I can see.", "Maybe you also lost it in the fall.",
                                     new DialogueManager.DialogueState("[quietly] Or maybe those shadows took it.", 
                                         "I didn't quite catch that.",
-                                        new DialogueManager.DialogueState("Nothing nothing, I'll keep an eye out for it.")
-                                    )
-                                )
+                                        new DialogueManager.DialogueState("Nothing nothing, I'll keep an eye out for it."),
+                                        VoiceLines.globVoiceLines[27] // corresponding voice line
+                                    ),
+                                    VoiceLines.globVoiceLines[26] // corresponding voice line
+                                ),
+                                VoiceLines.globVoiceLines[25] // corresponding voice line
                             ),
-                            new DialogueManager.DialogueState("[say nothing]")
+                            new DialogueManager.DialogueState("[say nothing]"),
+                            VoiceLines.globVoiceLines[21] // corresponding voice line
                         )
-                    )
+                    ),
+                    VoiceLines.globVoiceLines[20] // corresponding voice line
                 )
             )
         );

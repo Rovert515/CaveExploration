@@ -11,7 +11,9 @@ public class FloorFlashlight : Interactable
     //Flashlight Gotten Dialogue (Part 1)
     static DialogueManager.DialogueState flashlightDialogue =
         new DialogueManager.DialogueState("N/A", "",
-            new DialogueManager.DialogueState("Found it.", "Great, let's get out of here.")
+            new DialogueManager.DialogueState("Found it.", "Great, let's get out of here.",
+                VoiceLines.globVoiceLines[6]
+                )
         );
 
     private void Start()

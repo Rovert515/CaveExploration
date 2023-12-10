@@ -22,10 +22,14 @@ public class Dialogue_Repository : MonoBehaviour
                                     "Dumbass hikers who don't understand what a return time is.",
                                     new DialogueManager.DialogueState("And here I thought I was special.", 
                                         "Nah you're a dime a dozen.",
-                                        new DialogueManager.DialogueState("[sarcastic] I'm hurt.")
-                                    )
-                                )
-                            )
+                                        new DialogueManager.DialogueState("[sarcastic] I'm hurt."),
+                                        VoiceLines.globVoiceLines[13] // corresponding voice line
+                                    ),
+                                    VoiceLines.globVoiceLines[12] // corresponding voice line
+                                ),
+                                VoiceLines.globVoiceLines[11] // corresponding voice line
+                            ),
+                            VoiceLines.globVoiceLines[10] // corresponding voice line
                         ),
                         new DialogueManager.DialogueState("Well, hopefully I'll get out soon.", 
                             "The caves around here usually aren't that complicated, " + 
@@ -35,12 +39,18 @@ public class Dialogue_Repository : MonoBehaviour
                                 new DialogueManager.DialogueState("I'm not at risk of death by fire right? " + 
                                     "Cause that sounds like a horrible way to go.", 
                                     "Nah, the mountain is a looooong dormant volcano - completely dead.",
-                                    new DialogueManager.DialogueState("Unlike me, I hope.")
-                                )
-                            )
-                        )
-                    )
-                )
+                                    new DialogueManager.DialogueState("Unlike me, I hope."),
+                                    VoiceLines.globVoiceLines[16] // corresponding voice line
+                                ),
+                                VoiceLines.globVoiceLines[15] // corresponding voice line
+                            ),
+                            VoiceLines.globVoiceLines[14] // corresponding voice line
+                        ),
+                        VoiceLines.globVoiceLines[9] // corresponding voice line
+                    ),
+                    VoiceLines.globVoiceLines[8] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[7] // corresponding voice line
             )
         );
 
@@ -50,9 +60,12 @@ public class Dialogue_Repository : MonoBehaviour
             new DialogueManager.DialogueState("Alright yeah, I see the door- shit.", "What?",
                 new DialogueManager.DialogueState("The lever-pulley-thing is broken.", 
                     "Damn, well see if you can fix it. It's your only way out of here.",
-                    new DialogueManager.DialogueState("Maybe I can weigh it down with something...")
-                )
-            )
+                    new DialogueManager.DialogueState("Maybe I can weigh it down with something..."),
+                    VoiceLines.globVoiceLines[30] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[29] // corresponding voice line
+            ),
+            VoiceLines.globVoiceLines[28] // corresponding voice line
         );
 
     //Walking down second tunnel hallway (Part 2)
@@ -61,9 +74,12 @@ public class Dialogue_Repository : MonoBehaviour
             new DialogueManager.DialogueState("...", "All the old trees are gone and new trees have begun to grow, " + 
                 "but the charred and burned stumps remain.", 
                 new DialogueManager.DialogueState("...", "There's new life growing, but the scars are still visible. You know?",
-                    new DialogueManager.DialogueState("...yeah.")
-                )
-            )
+                    new DialogueManager.DialogueState("...yeah."),
+                    VoiceLines.globVoiceLines[38] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[37] // corresponding voice line
+            ),
+            VoiceLines.globVoiceLines[36] // corresponding voice line
         );
 
     //Walking down second tunnel hallway (Part 1)
@@ -72,7 +88,7 @@ public class Dialogue_Repository : MonoBehaviour
             new DialogueManager.DialogueState("I’m seeing a lot of support beams and stuff, what's that about?",
                 "Oh um, I think there used to be some kind of mining operation here? Back when that was a thing people did. " +
                 "It's abandoned now, obviously, but the mining tunnels remain.",
-                new DialogueManager.DialogueState("It’s spooky.", "Remanant of another time, I guess.",
+                new DialogueManager.DialogueState("It’s spooky.", "Remnant of another time, I guess.",
                     new DialogueManager.DialogueState("Feels haunted but like, in a mundane way, not a ghost way.", 
                         "Yeah, in what way?",
                         new DialogueManager.DialogueState("Like your childhood home after someone else has moved in.", "",
@@ -80,7 +96,8 @@ public class Dialogue_Repository : MonoBehaviour
                                 "4 instead of 5, the cabinets are all organized differently.", "",
                                 new DialogueManager.DialogueState("The insides are different, but the bones are the same.",
                                     "I think I know what you mean.",
-                                    hallway2DialoguePart2
+                                    hallway2DialoguePart2,
+                                    VoiceLines.globVoiceLines[35] // corresponding voice line
                                 )
                             )
                         ),
@@ -91,7 +108,8 @@ public class Dialogue_Repository : MonoBehaviour
                                     "tiled floor with sickly yellow light.", "", 
                                     new DialogueManager.DialogueState("The food and drinks are gone, but the artificial " + 
                                         "remains.", "I think I know what you mean.", 
-                                        hallway2DialoguePart2
+                                        hallway2DialoguePart2,
+                                        VoiceLines.globVoiceLines[35] // corresponding voice line
                                     )
                                 )
                             )
@@ -103,13 +121,17 @@ public class Dialogue_Repository : MonoBehaviour
                                     "but it burns hot in the summer.", "", 
                                     new DialogueManager.DialogueState("The natural has reclaimed it, but only on the surface.", 
                                         "I think I know what you mean.", 
-                                        hallway2DialoguePart2
+                                        hallway2DialoguePart2,
+                                        VoiceLines.globVoiceLines[35] // corresponding voice line
                                     )
                                 )
                             )
-                        )
-                    )
-                )
+                        ),
+                        VoiceLines.globVoiceLines[34] // corresponding voice line
+                    ),
+                    VoiceLines.globVoiceLines[33] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[32] // corresponding voice line
             )
         );
 
@@ -118,7 +140,8 @@ public class Dialogue_Repository : MonoBehaviour
         new DialogueManager.DialogueState("N/A", "", 
             new DialogueManager.DialogueState("Alright, I'm at another small chamber, there's a lot of old mining gear " + 
                 "and another door.", "It's locked I presume?", 
-                new DialogueManager.DialogueState("Probably, I'll see if I can find some way to open it.")
+                new DialogueManager.DialogueState("Probably, I'll see if I can find some way to open it."),
+                VoiceLines.globVoiceLines[39] // corresponding voice line
             )
         );
 
@@ -136,13 +159,20 @@ public class Dialogue_Repository : MonoBehaviour
                                     new DialogueManager.DialogueState("Yeah, just a little.", "Sorry.",
                                         new DialogueManager.DialogueState("...", "",
                                             new DialogueManager.DialogueState("Thanks for believing me, though.")
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
+                                        ),
+                                        VoiceLines.globVoiceLines[47] // corresponding voice line
+                                    ),
+                                    VoiceLines.globVoiceLines[46] // corresponding voice line
+                                ),
+                                VoiceLines.globVoiceLines[45] // corresponding voice line
+                            ),
+                            VoiceLines.globVoiceLines[44] // corresponding voice line
+                        ),
+                        VoiceLines.globVoiceLines[43] // corresponding voice line
+                    ),
+                    VoiceLines.globVoiceLines[42] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[41] // corresponding voice line
             )
         );
 
@@ -150,22 +180,24 @@ public class Dialogue_Repository : MonoBehaviour
     static DialogueManager.DialogueState hallway3Dialogue =
         new DialogueManager.DialogueState("N/A", "", 
             new DialogueManager.DialogueState("So, I should be near the end here?", "Yeah. Hopefully.", 
-                new DialogueManager.DialogueState("Hopefully?", "Yeah.", 
-                    new DialogueManager.DialogueState("...what do you mean by- shit.", "What's wrong?", 
-                        new DialogueManager.DialogueState("There's no exit tunnel!! What do I do??", "Okay okay okay, call me crazy-", 
-                            new DialogueManager.DialogueState("Shadow monsters are breathing down my neck, I can handle crazy.", 
-                                "You need to cause an explosion.", 
-                                new DialogueManager.DialogueState("...I stand corrected.", "I'm serious! It might be your only chance.", 
-                                    new DialogueManager.DialogueState("...", "", 
-                                        new DialogueManager.DialogueState("Okay.", "",
-                                            new DialogueManager.DialogueState("Let's do this.")
-                                        )
+                new DialogueManager.DialogueState("Hopefully? What do you mean by- shit.", "What's wrong?", 
+                    new DialogueManager.DialogueState("There's no exit tunnel!! What do I do??", "Okay okay okay, call me crazy-", 
+                        new DialogueManager.DialogueState("Shadow monsters are breathing down my neck, I can handle crazy.", 
+                            "You need to cause an explosion.", 
+                            new DialogueManager.DialogueState("...I stand corrected.", "I'm serious! It might be your only chance.", 
+                                new DialogueManager.DialogueState("...", "", 
+                                    new DialogueManager.DialogueState("Okay.", "",
+                                        new DialogueManager.DialogueState("Let's do this.")
                                     )
                                 )
-                            )
-                        )
-                    )
-                )
+                            ),
+                            VoiceLines.globVoiceLines[51] // corresponding voice line
+                        ),
+                        VoiceLines.globVoiceLines[50] // corresponding voice line
+                    ),
+                    VoiceLines.globVoiceLines[49] // corresponding voice line
+                ),
+                VoiceLines.globVoiceLines[48] // corresponding voice line
             )
         );
 
