@@ -70,7 +70,8 @@ public class PlayerCursor : MonoBehaviour
 
     private void Update()
     {
-        if (selectedObject != null & Input.GetMouseButtonDown(0)) // if there is an object selected and the player clicks the left mouse button
+        if (selectedObject != null & Input.GetMouseButtonDown(0) & !Pause_Menu_Manager.isPaused)
+            // if there is an object selected and the player clicks the left mouse button and the game is not paused
         {
             selectedObject.Interact(charMotor);
         }

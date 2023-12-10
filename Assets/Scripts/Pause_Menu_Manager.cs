@@ -15,7 +15,7 @@ public class Pause_Menu_Manager : MonoBehaviour
 
     private Assets.Pixelation.Scripts.Chunky chunkyScript;
 
-    private bool isPaused;
+    public static bool isPaused;
     private bool menuOpen;
 
     public Slider sensitivitySlider;
