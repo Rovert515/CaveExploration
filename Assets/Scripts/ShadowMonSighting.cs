@@ -6,7 +6,7 @@ using UnityEngine;
 // the screen until it runs into its destination or the player, then disappears, cueing a dialogue
 public class ShadowMonSighting : MonoBehaviour
 {
-    [SerializeField] private GameObject destination; // the point this moves towards
+    public GameObject destination; // the point this moves towards
     private UnityEngine.AI.NavMeshAgent agent;
 
     //After first shadow monster dialogue
@@ -27,6 +27,10 @@ public class ShadowMonSighting : MonoBehaviour
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+    }
+
+    private void Update()
+    {
         agent.destination = destination.transform.position;
     }
 
