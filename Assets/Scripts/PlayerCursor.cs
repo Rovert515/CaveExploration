@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// A script on a trigger hitbox connected to the player's camera that allows them to select Interactables when they
+// get close enough. When it makes contact with an Interactable it displays that interactable's promptText and the
+// cursor changes colors. If the player clicks while it is selecting an Interactable, it runs that Interactable's
+// Interact()
 public class PlayerCursor : MonoBehaviour
 {
     private static PlayerCursor instance; // active player curssor at the moment

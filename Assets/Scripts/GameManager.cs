@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// GameManager, monitors the player's dialogue key inputs
 public class GameManager : MonoBehaviour
 {
     void Update()

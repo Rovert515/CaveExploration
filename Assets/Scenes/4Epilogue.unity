@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walkie Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2018214387842133492, guid: c4108aa9e0c545843b17e250ddde6590, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2411483696980151625, guid: c4108aa9e0c545843b17e250ddde6590, type: 3}
       propertyPath: m_Pivot.x
       value: 0

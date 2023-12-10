@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Menu manager for the title screen
 public class Title_Menu_Manager : MonoBehaviour
 {
     private GameObject TitleMenu;
@@ -34,6 +35,8 @@ public class Title_Menu_Manager : MonoBehaviour
 
     public void StartGame()
     {
+        Cursor.visible = false; // hide the cursor because we're going to be using it to look around
+        Cursor.lockState = CursorLockMode.Locked; // lock the cursor because we're going to be using it to look around
         SceneManager.LoadScene(1);
     }
 

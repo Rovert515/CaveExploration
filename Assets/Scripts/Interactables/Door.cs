@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// A Door that allows the player to move to another room when clicked on. Can be locked and unlocked by other objects.
+// Does not transport the player if clicked on when locked
 public class Door : Interactable
 {
     [SerializeField] private string destinationID; // scene ID for the scene that this door leads to
@@ -10,8 +12,9 @@ public class Door : Interactable
 
     private void Start()
     {
-        if (promptText == null) // if this is connected to a lever or key, the prompt text will already have been changed by Lock()
-            // in the other object's Awake(), so we only set it to the default if it's null
+        if (promptText == null) // if this is connected to something that locks it, the prompt text
+                                // will already have been changed by Lock() in the other object's Awake(),
+                                //  so we only set it to the default if it's null
         {
             promptText = "Click to open door";
         }

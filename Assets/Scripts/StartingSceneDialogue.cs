@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Contains and runs the dialogue that plays at the beginning of the first level
 public class StartingSceneDialogue : MonoBehaviour
 {
 

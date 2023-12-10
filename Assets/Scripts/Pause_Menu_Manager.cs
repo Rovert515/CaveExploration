@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Pixelation.Example.Scripts;
 using UnityEngine;
 
+// Menu manager script for the pause menu
 public class Pause_Menu_Manager : MonoBehaviour
 {
 
@@ -69,6 +70,8 @@ public class Pause_Menu_Manager : MonoBehaviour
     }
     void PauseGame()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         chunkyScript.enabled = true;
@@ -76,6 +79,8 @@ public class Pause_Menu_Manager : MonoBehaviour
     }
     public void ResumeGame()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
         chunkyScript.enabled = false;

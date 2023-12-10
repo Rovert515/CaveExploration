@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Menu manager script for the game over menu
 public class GameOverManager : MonoBehaviour
 {
     private GameObject gameOverMenu;
@@ -14,26 +15,17 @@ public class GameOverManager : MonoBehaviour
         gameOverMenu.SetActive(false);
     }
 
-
-
-    /*// Update is called once per frame
-    void Update()
+    public void OpenMenu()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            OpenGameOverMenu();
-        }
+        Cursor.visible = true; // free up the cursor so that we can navigate the game over menu
+        Cursor.lockState = CursorLockMode.None;
+        gameObject.SetActive(true); // open the game over menu
     }
 
-    public void OpenGameOverMenu()
-    {
-        gameOverMenu.SetActive(true);
-    }*/
-
-
-    // Restarts the current scene
     public void RestartScene()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
@@ -41,8 +33,6 @@ public class GameOverManager : MonoBehaviour
     // Quits the game
     public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-
         Application.Quit();
 
     }

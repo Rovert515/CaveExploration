@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Manages the conversation system: the state of the dialogue, those that follow it, and moving between them
 public class DialogueManager : MonoBehaviour
 {
     // enum for sending followup choices to DialogueState.GetFollowup
@@ -92,6 +93,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option1Display;
     [SerializeField] private TextMeshProUGUI option2Display;
 
+    [SerializeField] private AudioClip beginTransmission; // audio clip played at the beginning of a transmission
+
     private void Awake()
     {
         currentDialogueManager = this; // sets the currently active DialogueManager to be this instance
@@ -120,8 +123,8 @@ public class DialogueManager : MonoBehaviour
         option1Display.enabled = false;
         option2Display.enabled = false;
     }
-
-    public void SetDialogueState(DialogueState state) // set the current Dialogue State to the one inputted and update relevant UI elements
+    // set the current Dialogue State to the one inputted and update relevant UI elements
+    public void SetDialogueState(DialogueState state)
     {
         if (playerMotor != null)
         {
@@ -149,6 +152,7 @@ public class DialogueManager : MonoBehaviour
         messageTxtDisplay.text = currentDialogueState.GetMessageTxt();
         currentAudioSource.clip = currentDialogueState.GetMessageAud(); // set the current voice line to the current audio source's clip
         currentAudioSource.Play(); // play the current voice line
+        currentAudioSource.PlayOneShot(beginTransmission);
 
         if (currentDialogueState.GetFollowup(OptionChoice.Select0) != null) // if there's a followup, set it up
         {
@@ -192,7 +196,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void WipeDialogueState() // set the current dialogue state to null and deactivate relevant UI elements
+    // set the current dialogue state to null and deactivate relevant UI elements
+    public void WipeDialogueState()
     {
         currentDialogueState = null;
         // hide option text, hide message text, end the audio if it's playing

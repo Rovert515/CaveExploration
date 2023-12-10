@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Abstract base class for any object that the player can click on with the cursor to induce a behavior
 public abstract class Interactable : MonoBehaviour
 {
     protected string promptText; // when the cursor hovers over this object, the player will see "Click to " followed by this text

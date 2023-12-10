@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Pretty straightforward little script for running through the scripted (heh heh) epilogue. Pauses for initialDelay
+// seconds, sets the dialogue state, waits till the dialogue is done, pauses for initialDelay seconds, reveals the
+// sky and plays birdsong, waits for finalDelay seconds and then cuts to credits
 public class RunEpilogue : MonoBehaviour
 {
     [SerializeField] UnityEngine.UI.Image blackScreen; // a black screen that hides the sky
@@ -45,7 +48,8 @@ public class RunEpilogue : MonoBehaviour
 
     private IEnumerator EpilogueEnd()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(initialDelay);
+        audioSource.volume = 0.01f; // set to correct volume for the finalAmbiance (that file is really damn loud)
         audioSource.PlayOneShot(finalAmbiance); // plays the ambient noise
         blackScreen.gameObject.SetActive(false); // turn off the black screen so they can see the sky
         yield return new WaitForSeconds(finalDelay);
