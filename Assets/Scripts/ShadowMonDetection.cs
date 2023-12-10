@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShadowMonsterDetection : MonoBehaviour
+public class ShadowMonDetection : MonoBehaviour
 {
     public GameObject shadowMonsterDetectionUI;
 

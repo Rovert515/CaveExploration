@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Stores the dialogue that plays when the player interacts with any of the area based dialogue triggers in the levels
 public class Dialogue_Repository : MonoBehaviour
 {
 
@@ -217,6 +218,7 @@ public class Dialogue_Repository : MonoBehaviour
             else if (gameObject.tag == "Hallway3Dialogue") //if the object is the trigger for the hallway dialogue
             {
                 DialogueManager.currentDialogueManager.SetDialogueState(hallway3Dialogue);
+                gameObject.SetActive(false);
             }
         }
     }

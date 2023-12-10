@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Menu manager for the title screen
 public class Title_Menu_Manager : MonoBehaviour
 {
     private GameObject TitleMenu;

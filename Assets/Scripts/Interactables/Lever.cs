@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// A Lever that locks a door it is attached to until the player interacts with the Lever after picking up a
+// LiftableRock
 public class Lever : Interactable
 {
     [SerializeField] private Door door; // the door that this lever opens

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShadowMonsterDialogue : ShadowMonsterMove
+public class ShadowMonDialogue : ShadowMonMove
 {
     //After scaring away shadow dialogue
     static DialogueManager.DialogueState scaredShadowDialogue1 =

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Menu manager script for the game over menu
 public class GameOverManager : MonoBehaviour
 {
     private GameObject gameOverMenu;

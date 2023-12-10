@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShadowSighting : MonoBehaviour
+// Code for the first shadow monster the player sees. When it becomes active (from its SpawnTrigger), it runs across
+// the screen until it runs into its destination or the player, then disappears, cueing a dialogue
+public class ShadowMonSighting : MonoBehaviour
 {
     [SerializeField] private GameObject destination; // the point this moves towards
     private UnityEngine.AI.NavMeshAgent agent;
