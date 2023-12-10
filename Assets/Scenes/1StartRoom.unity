@@ -2193,6 +2193,14 @@ PrefabInstance:
       propertyPath: sensitivitySlider
       value: 
       objectReference: {fileID: 1114644567}
+    - target: {fileID: 2175873766280131594, guid: f14662a3d184749a19ff47cfb64dfcd7, type: 3}
+      propertyPath: m_text
+      value: GAME OVER
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175873766280131594, guid: f14662a3d184749a19ff47cfb64dfcd7, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4845932008732963851, guid: f14662a3d184749a19ff47cfb64dfcd7, type: 3}
       propertyPath: m_Name
       value: FirstPersonController
